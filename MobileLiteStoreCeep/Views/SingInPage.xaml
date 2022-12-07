@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MobileLiteStoreCeep.ViewModels"
              x:Class="MobileLiteStoreCeep.Views.SingInPage"
-             x:DataType="vm:SingInViewModel">
+             x:DataType="vm:SingInViewModel"
+             BackgroundColor="#121212">
     <Grid Padding="16"
           VerticalOptions="Center">
         <Grid.RowDefinitions>
@@ -13,19 +14,32 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <HorizontalStackLayout>
-            <Label Text="Your "
-                   FontAttributes="Bold"
-                   FontSize="24"/>
-            <Label Text="Breakfasts"
-                   FontAttributes="Bold"
-                   FontSize="24"
-                   TextColor="Blue"/>
-        </HorizontalStackLayout>
+        <BoxView Grid.RowSpan="10"
+                 CornerRadius="20"
+                 Margin="-10, -40, -10, -40"
+                 Color="#383838"/>
 
-        <Entry Grid.Row="1"
+        <Image Source="logo.png"
+               HeightRequest="140"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               
+               Margin="0, 5, 0, 15"/>
+
+        <Label Text="Войдите в свою учетную запись"
+               FontFamily="Jost"
+               Margin="0, 0, 0, 15"
+               Grid.Row="1"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               FontSize="24"
+               TextColor="White"/>
+
+        <Entry Grid.Row="2"
                Text="{Binding Username,
                       Mode=TwoWay}"
                Placeholder="Логин"
@@ -33,8 +47,15 @@
                Keyboard="Text"
                FontFamily="Jost"
                FontSize="24"/>
-        
-        <Entry Grid.Row="2"
+
+        <Label Text="{Binding ErrorMessageUsername, Mode=TwoWay}"
+               Grid.Row="3"
+               HorizontalOptions="Start"
+               FontSize="24"
+               FontFamily="Jost"
+               TextColor="#de3341"/>
+
+        <Entry Grid.Row="4"
                IsPassword="True"
                Text="{Binding Password,
                       Mode=TwoWay}"
@@ -42,14 +63,31 @@
                Keyboard="Default"
                FontFamily="Jost"
                FontSize="24"/>
-        
-        <Button Grid.Row="3"
-                BackgroundColor="Black"
+
+        <Label Text="{Binding ErrorMessagePassword}"
+               Grid.Row="5"
+               HorizontalOptions="Start"
+               FontSize="24"
+               FontFamily="Jost"
+               TextColor="#de3341"/>
+
+        <Button Grid.Row="6"
+                BackgroundColor="#121212"
+                FontFamily="Jost"
+                TextColor="White"
                 Text="ВОЙТИ"
                 Command="{Binding SendMessageCommand}"
                 Padding="16"
                 FontSize="24"
-                CornerRadius="8"/>
+                CornerRadius="8"
+                Margin="0, 10, 0, 0"/>
+
+        <Label Text="Типо валидация"
+               Grid.Row="7"
+               HorizontalOptions="Start"
+               FontSize="24"
+               FontFamily="Jost"
+               TextColor="#de3341"/>
 
         <!--<dxe:TextEdit LabelText="Login"
                       Grid.Row="3"

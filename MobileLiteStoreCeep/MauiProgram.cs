@@ -22,6 +22,8 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<SingInViewModel>();
 
+        builder.Services.AddTransient<UserService>();
+
         builder.Services.AddSingleton<SingInPage>();
 
         builder.Services.AddSingleton<ActivationViewModel>();

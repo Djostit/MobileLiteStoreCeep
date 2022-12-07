@@ -16,7 +16,8 @@ namespace MobileLiteStoreCeep.Services
 
         public async Task CheckAllUsers()
         {
-            await ReadUsersAsync();
+            if(Users.Count is 0)
+                await ReadUsersAsync();
 
             foreach (var item in Users)
             {
@@ -26,7 +27,8 @@ namespace MobileLiteStoreCeep.Services
 
         public async Task<bool> AuthorizeUserAsync(string username, string password)
         {
-            await ReadUsersAsync();
+            if (Users.Count is 0)
+                await ReadUsersAsync();
 
             var user = Users.SingleOrDefault(u => u.Username.Equals(username));
 
@@ -40,7 +42,8 @@ namespace MobileLiteStoreCeep.Services
 
         public async Task AddUserAsync(string name, string lastName, string birthday, string country, string username, string password)
         {
-            await ReadUsersAsync();
+            if (Users.Count is 0)
+                await ReadUsersAsync();
 
             Users.Add(new User
             {
