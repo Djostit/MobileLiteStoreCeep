@@ -9,10 +9,47 @@ namespace MobileLiteStoreCeep.Services
         public static List<User> Users { get; set; } = new List<User>();
 
         private const string PATH = "user.json";
-        private static async Task ReadUsersAsync() => Users = JsonConvert.DeserializeObject<List<User>>(await File.ReadAllTextAsync(Path
-            .Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), PATH)));
-        private static async Task SaveUserAsync() => await File.WriteAllTextAsync(Path
-            .Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), PATH), JsonConvert.SerializeObject(Users, Formatting.Indented));
+        //System.IO.FileNotFoundException: 
+        private static async Task ReadUsersAsync()
+        {
+            /* Для первого запуска
+             * Если файла не существует
+             * Он копирует файл и сохраняет
+             * И дальше без потери производительности работает с ним
+            */
+
+            if (!File.Exists(Path.Combine(FileSystem.Current.AppDataDirectory, PATH)))
+            {
+                using var stream = await FileSystem.OpenAppPackageFileAsync("user.json");
+                using var reader = new StreamReader(stream);
+
+                var contents = await reader.ReadToEndAsync();
+
+                Users = JsonConvert.DeserializeObject<List<User>>(contents);
+
+                await SaveUserAsync();
+            }
+            else
+            {
+                string targetFile = Path.Combine(FileSystem.Current.AppDataDirectory, PATH);
+
+                using FileStream outputStream = File.OpenRead(targetFile);
+                using var reader = new StreamReader(outputStream);
+
+                var contents = await reader.ReadToEndAsync();
+
+                Users = JsonConvert.DeserializeObject<List<User>>(contents);
+            }
+        }
+        private static async Task SaveUserAsync()
+        {
+            string targetFile = Path.Combine(FileSystem.Current.AppDataDirectory, PATH);
+
+            using FileStream outputStream = File.OpenWrite(targetFile);
+            using var streamWriter = new StreamWriter(outputStream);
+
+            await streamWriter.WriteAsync(JsonConvert.SerializeObject(Users, Formatting.Indented));
+        }
 
         public async Task CheckAllUsers()
         {

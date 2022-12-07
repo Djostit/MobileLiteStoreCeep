@@ -1,17 +1,16 @@
-﻿using System.Diagnostics;
-
-namespace MobileLiteStoreCeep.ViewModels;
+﻿namespace MobileLiteStoreCeep.ViewModels;
 
 public partial class SingInViewModel : BaseViewModel
 {
     [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(SignInCommand))]
     private string username;
 
     [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(SignInCommand))]
     private string password;
 
     [ObservableProperty]
-    //[NotifyCanExecuteChangedFor(nameof(SendMessageCommand))]
     private string errorMessageUsername;
 
     [ObservableProperty]
@@ -27,43 +26,37 @@ public partial class SingInViewModel : BaseViewModel
     }
 
     [RelayCommand(CanExecute = nameof(CanSignIn))]
-    public async Task SendMessage()
+    public async Task SignIn()
     {
         if (await _userService.AuthorizeUserAsync(Username, Password) is true)
-        {
-            Debug.WriteLine("Успешно!");
-        }
+            ErrorMessageButton = string.Empty;
         else
-        {
-            Debug.WriteLine("Неверное имя пользователя или пароль");
-        }
-        //await _userService.CheckAllUsers();
+            ErrorMessageButton = "Неверное имя пользователя или пароль";
     }
     private bool CanSignIn()
     {
-        //if (string.IsNullOrWhiteSpace(Username))
-        //    ErrorMessageUsername = "Обязательно";
-        //else if (Username.Length < 3)
-        //    ErrorMessageUsername = "Слишком короткий";
-        //else
-        //    ErrorMessageUsername = string.Empty;
+        if (string.IsNullOrWhiteSpace(Username))
+            ErrorMessageUsername = "Обязательно";
+        else if (Username.Length < 3)
+            ErrorMessageUsername = "Слишком короткий";
+        else
+            ErrorMessageUsername = string.Empty;
 
-        //if (string.IsNullOrWhiteSpace(Password))
-        //    ErrorMessagePassword = "Обязательно";
-        //else if (Password.Length < 7)
-        //    ErrorMessagePassword = "Слишком короткий";
-        //else if (Password.Contains(' ')
-        //        || !Password.Any(char.IsDigit)
-        //        || !Password.Any(char.IsLetter))
-        //    ErrorMessagePassword = "Неверный формат";
-        //else
-        //    ErrorMessagePassword = string.Empty;
+        if (string.IsNullOrWhiteSpace(Password))
+            ErrorMessagePassword = "Обязательно";
+        else if (Password.Length < 7)
+            ErrorMessagePassword = "Слишком короткий";
+        else if (Password.Contains(' ')
+                || !Password.Any(char.IsDigit)
+                || !Password.Any(char.IsLetter))
+            ErrorMessagePassword = "Неверный формат";
+        else
+            ErrorMessagePassword = string.Empty;
 
-        //if (ErrorMessageUsername.Equals(string.Empty)
-        //        && ErrorMessagePassword.Equals(string.Empty))
-        //    return true;
-        //else
-        //    return false;
-        return Username is not null;
+        if (ErrorMessageUsername.Equals(string.Empty)
+            && ErrorMessagePassword.Equals(string.Empty))
+            return true;
+        else
+            return false;
     }
 }
