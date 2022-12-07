@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MobileLiteStoreCeep.ViewModels"
+             x:Class="MobileLiteStoreCeep.Views.SingInPage"
+             x:DataType="vm:SingInViewModel">
+    <Grid Padding="16"
+          VerticalOptions="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <HorizontalStackLayout>
+            <Label Text="Your "
+                   FontAttributes="Bold"
+                   FontSize="24"/>
+            <Label Text="Breakfasts"
+                   FontAttributes="Bold"
+                   FontSize="24"
+                   TextColor="Blue"/>
+        </HorizontalStackLayout>
+
+        <Entry Grid.Row="1"
+               Text="{Binding Username,
+                      Mode=TwoWay}"
+               Placeholder="Логин"
+               IsTextPredictionEnabled="True"
+               Keyboard="Text"
+               FontFamily="Jost"
+               FontSize="24"/>
+        
+        <Entry Grid.Row="2"
+               IsPassword="True"
+               Text="{Binding Password,
+                      Mode=TwoWay}"
+               Placeholder="Пароль"
+               Keyboard="Default"
+               FontFamily="Jost"
+               FontSize="24"/>
+        
+        <Button Grid.Row="3"
+                BackgroundColor="Black"
+                Text="ВОЙТИ"
+                Command="{Binding SendMessageCommand}"
+                Padding="16"
+                FontSize="24"
+                CornerRadius="8"/>
+
+        <!--<dxe:TextEdit LabelText="Login"
+                      Grid.Row="3"
+                      Margin="0" />
+        <dxe:PasswordEdit LabelText="Password"  
+                          LabelFontSize="Small" 
+                          Margin="0" 
+                          Grid.Row="4" />-->
+
+    </Grid>
+
+</ContentPage>

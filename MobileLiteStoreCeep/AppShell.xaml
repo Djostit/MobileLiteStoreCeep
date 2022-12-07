@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MobileLiteStoreCeep.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:MobileLiteStoreCeep.Views"
+    xmlns:local="clr-namespace:MobileLiteStoreCeep">
+
+    <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="Main"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="SingUp"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:SingUpPage}"
+        Route="SingUpPage" />
+    <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="SingIn"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:SingInPage}"
+        Route="SingInPage" />
+    <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="Activation"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:ActivationPage}"
+        Route="ActivationPage" />
+    <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="ReplenishmentBalance"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:ReplenishmentBalancePage}"
+        Route="ReplenishmentBalancePage" />
+    <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="Store"
+        Icon="iconlistdetail.png"
+        ContentTemplate="{DataTemplate views:StorePage}"
+        Route="StorePage" />
+    <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="Library"
+        Icon="iconlistdetail.png"
+        ContentTemplate="{DataTemplate views:LibraryPage}"
+        Route="LibraryPage" />
+    <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="Setting"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:SettingPage}"
+        Route="SettingPage" />
+    <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="ByuingGame"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:ByuingGamePage}"
+        Route="ByuingGamePage" />
+    <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="SuccessfulPay"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:SuccessfulPayPage}"
+        Route="SuccessfulPayPage" />
+</Shell>
