@@ -4,6 +4,7 @@
              xmlns:vm="clr-namespace:MobileLiteStoreCeep.ViewModels"
              x:Class="MobileLiteStoreCeep.Views.SingInPage"
              x:DataType="vm:SingInViewModel"
+             Shell.NavBarIsVisible="False"
              BackgroundColor="#121212">
     <ScrollView>
         <Grid Padding="16"

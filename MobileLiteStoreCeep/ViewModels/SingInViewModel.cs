@@ -29,7 +29,9 @@ public partial class SingInViewModel : BaseViewModel
     public async Task SignIn()
     {
         if (await _userService.AuthorizeUserAsync(Username, Password) is true)
+        {
             ErrorMessageButton = string.Empty;
+        }
         else
             ErrorMessageButton = "Неверное имя пользователя или пароль";
     }

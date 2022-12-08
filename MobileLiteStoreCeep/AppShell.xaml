@@ -6,24 +6,27 @@
     xmlns:views="clr-namespace:MobileLiteStoreCeep.Views"
     xmlns:local="clr-namespace:MobileLiteStoreCeep">
 
+    
     <ShellContent
         Shell.NavBarIsVisible="true"
         Title="Main"
         Icon="iconblank.png"
         ContentTemplate="{DataTemplate views:MainPage}"
         Route="MainPage" />
-    <ShellContent
-        Shell.NavBarIsVisible="true"
-        Title="SingUp"
-        Icon="iconblank.png"
-        ContentTemplate="{DataTemplate views:SingUpPage}"
-        Route="SingUpPage" />
-    <ShellContent
-        Shell.NavBarIsVisible="true"
-        Title="SingIn"
-        Icon="iconblank.png"
-        ContentTemplate="{DataTemplate views:SingInPage}"
-        Route="SingInPage" />
+    <FlyoutItem>
+        <ShellContent
+            Shell.NavBarIsVisible="true"
+            Title="SingUp"
+            Icon="iconblank.png"
+            ContentTemplate="{DataTemplate views:SingUpPage}"
+            Route="SingUpPage" />
+        <ShellContent
+            Shell.NavBarIsVisible="true"
+            Title="SingIn"
+            Icon="iconblank.png"
+            ContentTemplate="{DataTemplate views:SingInPage}"
+            Route="SingInPage" />
+    </FlyoutItem>
     <ShellContent
         Shell.NavBarIsVisible="true"
         Title="Activation"

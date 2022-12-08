@@ -62,6 +62,6 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<SuccessfulPayPage>();
 
-		return builder.Build();
+        return builder.Build();
 	}
 }

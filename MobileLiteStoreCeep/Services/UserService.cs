@@ -12,7 +12,8 @@ namespace MobileLiteStoreCeep.Services
         //System.IO.FileNotFoundException: 
         private static async Task ReadUsersAsync()
         {
-            /* Для первого запуска
+            /* 
+             * Для первого запуска
              * Если файла не существует
              * Он копирует файл и сохраняет
              * И дальше без потери производительности работает с ним
@@ -69,7 +70,7 @@ namespace MobileLiteStoreCeep.Services
 
             var user = Users.SingleOrDefault(u => u.Username.Equals(username));
 
-            if (user == null)
+            if (user is null)
                 return false;
 
             Global.CurrentUser = user;
