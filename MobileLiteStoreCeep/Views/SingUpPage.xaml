@@ -5,7 +5,9 @@
              x:Class="MobileLiteStoreCeep.Views.SingUpPage"
              x:DataType="vm:SingUpViewModel"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="#121212">
+             BackgroundColor="#121212"
+             
+             xmlns:m="clr-namespace:MobileLiteStoreCeep.Models">
     <ScrollView>
         <Grid Padding="16"
               VerticalOptions="Center">
@@ -59,14 +61,22 @@
                     Title="Страна"
                     VerticalOptions="Center"
                     SelectedItem="{Binding SelectedCounrty}"
+                    ItemsSource="{Binding Array}"
                     FontFamily="Jost"
+                    TextColor="Red"
                     FontSize="24">
-                <Picker.Items>
-                    <x:String>C#</x:String>
-                    <x:String>JavaScript</x:String>
-                    <x:String>Java</x:String>
-                </Picker.Items>
             </Picker>
+            <!--<CollectionView ItemsSource="{Binding Array}" Grid.Row="2">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                                       ItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="m:Country">
+                        <Label Text="{Binding name}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>-->
 
             <Grid Grid.Row="3">
                 <Grid.RowDefinitions>

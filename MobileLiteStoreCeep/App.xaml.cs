@@ -2,11 +2,10 @@
 
 public partial class App : Application
 {
-	public App()
+	public App(SingInPage page)
 	{
 		InitializeComponent();
 
-        MainPage = new NavigationPage();
-        MainPage.Navigation.PushAsync(new SingUpPage(new SingUpViewModel(new UserService())));
+        MainPage = new NavigationPage(page);
     }
 }

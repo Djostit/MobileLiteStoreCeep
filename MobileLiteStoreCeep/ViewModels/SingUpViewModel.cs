@@ -4,8 +4,16 @@ namespace MobileLiteStoreCeep.ViewModels;
 
 public partial class SingUpViewModel : BaseViewModel
 {
+    public static List<Country> Countrys { get; set; } = new List<Country>();
+    //[ObservableProperty]
+    //private static ObservableCollection<Country> countries = new ObservableCollection<Country>(JsonConvert.DeserializeObject<List<Country>>(GetCountries().Result));
+
+    //public ObservableCollection<Country> Country { get; set; }
+    //    = new ObservableCollection<Country>(JsonConvert.DeserializeObject<List<Country>>(File
+    //        .ReadAllText(Path.GetFullPath(@"Jsons\countries.json")
+    //        .Replace(@"\bin\Debug\net7.0-windows\", @"\"))));
     [ObservableProperty]
-    private ObservableCollection<Country> countries;
+    private List<Country> array = Countrys;
 
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(SingUpCommand))]
@@ -68,7 +76,21 @@ public partial class SingUpViewModel : BaseViewModel
     public SingUpViewModel(UserService userService)
     {
         _userService = userService;
-        countries = JsonConvert.DeserializeObject<List<Country>>(GetCountries().GetAwaiter());
+
+        GetCountries();
+
+        //Task<string> post = postPostAsync("Url", data).Result.Content.ReadAsStringAsync();
+        //post.Result.ToString();
+    }
+    private static async Task GetCountries()
+    {
+        using var stream = await FileSystem.OpenAppPackageFileAsync("countries.json");
+        using var reader = new StreamReader(stream);
+
+        var contents = await reader.ReadToEndAsync();
+
+        Countrys = JsonConvert.DeserializeObject<List<Country>>(contents);
+
     }
 
     [RelayCommand(CanExecute = nameof(CanSingUp))]
@@ -80,11 +102,10 @@ public partial class SingUpViewModel : BaseViewModel
         //}
         //else
         //    ErrorMessageButton = "Неверное имя пользователя или пароль";
-        Debug.WriteLine(SelectedCounrty);
+        Debug.WriteLine(Countrys.Count);
     }
     private bool CanSingUp()
     {
-        
         return true;
         //if (string.IsNullOrWhiteSpace(Name))
         //    ErrorMessageName = "Обязательно";
@@ -99,20 +120,6 @@ public partial class SingUpViewModel : BaseViewModel
         //    ErrorMessageLastName = "Неверный формат";
         //else
         //    ErrorMessageLastName = string.Empty;
-
-        //if (string.IsNullOrWhiteSpace(Birthday))
-        //    ErrorMessageBirthday = "Обязательно";
-        //else if (int.Parse(Birthday.Split('.')[2].Split(' ')[0]) > DateEnd.Year
-        //         || int.Parse(Birthday.Split('.')[2].Split(' ')[0]) >= DateEnd.Year
-        //         && int.Parse(Birthday.Split('.')[0].Split(' ')[0]) > DateEnd.Month
-        //         || int.Parse(Birthday.Split('.')[2].Split(' ')[0]) >= DateEnd.Year
-        //         && int.Parse(Birthday.Split('.')[0].Split(' ')[0]) >= DateEnd.Month
-        //         && int.Parse(Birthday.Split('.')[1].Split(' ')[0]) > DateEnd.Day)
-        //    ErrorMessageBirthday = "Неверный формат";
-        //else if (int.Parse(Birthday.Split('.')[2].Split(' ')[0]) < DateStart.Year)
-        //    ErrorMessageBirthday = "Неверный формат";
-        //else
-        //    ErrorMessageBirthday = string.Empty;
 
         //if (string.IsNullOrWhiteSpace(Username))
         //    ErrorMessageUsername = "Обязательно";
@@ -153,14 +160,5 @@ public partial class SingUpViewModel : BaseViewModel
         //else
         //    return false;
     }
-    private static async Task<string> GetCountries()
-    {
-        using var stream = await FileSystem.OpenAppPackageFileAsync("countries.json");
-        using var reader = new StreamReader(stream);
-
-        var contents = await reader.ReadToEndAsync();
-
-        return contents;
-        
-    }
+    
 }

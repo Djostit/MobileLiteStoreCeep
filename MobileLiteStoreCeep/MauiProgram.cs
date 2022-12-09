@@ -62,6 +62,8 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<SuccessfulPayPage>();
 
+        builder.Services.AddTransient<NavigationService>();
+
         return builder.Build();
 	}
 }

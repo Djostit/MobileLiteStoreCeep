@@ -20,9 +20,11 @@ public partial class SingInViewModel : BaseViewModel
     private string errorMessageButton;
 
     private readonly UserService _userService;
-    public SingInViewModel(UserService userService)
+    private readonly NavigationService _navigationService;
+    public SingInViewModel(UserService userService, NavigationService navigationService)
     {
         _userService = userService;
+        _navigationService = navigationService;
     }
 
     [RelayCommand(CanExecute = nameof(CanSignIn))]
@@ -31,6 +33,7 @@ public partial class SingInViewModel : BaseViewModel
         if (await _userService.AuthorizeUserAsync(Username, Password) is true)
         {
             ErrorMessageButton = string.Empty;
+            
         }
         else
             ErrorMessageButton = "Неверное имя пользователя или пароль";
@@ -60,5 +63,10 @@ public partial class SingInViewModel : BaseViewModel
             return true;
         else
             return false;
+    }
+    [RelayCommand]
+    public async Task SignUp()
+    {
+        await _navigationService.ChangePage(new SingUpPage(new SingUpViewModel(new UserService())));
     }
 }
