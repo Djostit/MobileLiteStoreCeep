@@ -4,69 +4,86 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:MobileLiteStoreCeep.Views"
-    xmlns:local="clr-namespace:MobileLiteStoreCeep">
+    xmlns:local="clr-namespace:MobileLiteStoreCeep"
+    Shell.TabBarIsVisible="False">
 
+    <Shell.FlyoutHeader>
+        <Label Text="test"/>
+    </Shell.FlyoutHeader>
     
     <ShellContent
-        Shell.NavBarIsVisible="true"
-        Title="Main"
+        Title="SingIn Page"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
         Icon="iconblank.png"
-        ContentTemplate="{DataTemplate views:MainPage}"
-        Route="MainPage" />
-    <FlyoutItem>
-        <ShellContent
-            Shell.NavBarIsVisible="true"
-            Title="SingUp"
-            Icon="iconblank.png"
-            ContentTemplate="{DataTemplate views:SingUpPage}"
-            Route="SingUpPage" />
-        <ShellContent
-            Shell.NavBarIsVisible="true"
-            Title="SingIn"
-            Icon="iconblank.png"
-            ContentTemplate="{DataTemplate views:SingInPage}"
-            Route="SingInPage" />
-    </FlyoutItem>
+        ContentTemplate="{DataTemplate views:SingInPage}"
+        Route="SingInPage" />
+    
     <ShellContent
+        Title="SingIn Page"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:SingUpPage}"
+        Route="SingUpPage" />
+
+    <FlyoutItem Route="StorePage"
+                FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent
         Shell.NavBarIsVisible="true"
         Title="Activation"
         Icon="iconblank.png"
         ContentTemplate="{DataTemplate views:ActivationPage}"
         Route="ActivationPage" />
-    <ShellContent
+        
+        <ShellContent
         Shell.NavBarIsVisible="true"
         Title="ReplenishmentBalance"
         Icon="iconblank.png"
         ContentTemplate="{DataTemplate views:ReplenishmentBalancePage}"
         Route="ReplenishmentBalancePage" />
-    <ShellContent
+        
+        <ShellContent
         Shell.NavBarIsVisible="true"
         Title="Store"
         Icon="iconlistdetail.png"
         ContentTemplate="{DataTemplate views:StorePage}"
         Route="StorePage" />
-    <ShellContent
+        
+        <ShellContent
         Shell.NavBarIsVisible="true"
         Title="Library"
         Icon="iconlistdetail.png"
         ContentTemplate="{DataTemplate views:LibraryPage}"
         Route="LibraryPage" />
-    <ShellContent
+        
+        <ShellContent
         Shell.NavBarIsVisible="true"
         Title="Setting"
         Icon="iconblank.png"
         ContentTemplate="{DataTemplate views:SettingPage}"
         Route="SettingPage" />
-    <ShellContent
+        
+        <ShellContent
         Shell.NavBarIsVisible="true"
         Title="ByuingGame"
         Icon="iconblank.png"
         ContentTemplate="{DataTemplate views:ByuingGamePage}"
         Route="ByuingGamePage" />
-    <ShellContent
+        
+        <ShellContent
         Shell.NavBarIsVisible="true"
         Title="SuccessfulPay"
         Icon="iconblank.png"
         ContentTemplate="{DataTemplate views:SuccessfulPayPage}"
         Route="SuccessfulPayPage" />
+        
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Sing Out"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
 </Shell>

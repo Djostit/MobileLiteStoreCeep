@@ -1,6 +1,5 @@
 ﻿using MobileLiteStoreCeep.Assests;
 using Newtonsoft.Json;
-using System.Diagnostics;
 
 namespace MobileLiteStoreCeep.Services
 {
@@ -54,7 +53,7 @@ namespace MobileLiteStoreCeep.Services
 
         public async Task CheckAllUsers()
         {
-            if(Users.Count is 0)
+            if (Users.Count is 0)
                 await ReadUsersAsync();
 
             foreach (var item in Users)

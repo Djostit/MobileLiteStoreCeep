@@ -160,5 +160,5 @@ public partial class SingUpViewModel : BaseViewModel
         //else
         //    return false;
     }
-    
+
 }

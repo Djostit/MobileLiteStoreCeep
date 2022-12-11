@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace MobileLiteStoreCeep.Models
+﻿namespace MobileLiteStoreCeep.Models
 {
     public class Game
     {

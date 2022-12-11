@@ -2,9 +2,9 @@
 
 public partial class SettingPage : ContentPage
 {
-	public SettingPage(SettingViewModel viewModel)
-	{
-		InitializeComponent();
-		BindingContext = viewModel;
-	}
+    public SettingPage(SettingViewModel viewModel)
+    {
+        InitializeComponent();
+        BindingContext = viewModel;
+    }
 }

@@ -2,9 +2,9 @@
 
 public partial class ReplenishmentBalancePage : ContentPage
 {
-	public ReplenishmentBalancePage(ReplenishmentBalanceViewModel viewModel)
-	{
-		InitializeComponent();
-		BindingContext = viewModel;
-	}
+    public ReplenishmentBalancePage(ReplenishmentBalanceViewModel viewModel)
+    {
+        InitializeComponent();
+        BindingContext = viewModel;
+    }
 }

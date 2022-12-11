@@ -2,9 +2,9 @@
 
 public partial class ByuingGamePage : ContentPage
 {
-	public ByuingGamePage(ByuingGameViewModel viewModel)
-	{
-		InitializeComponent();
-		BindingContext = viewModel;
-	}
+    public ByuingGamePage(ByuingGameViewModel viewModel)
+    {
+        InitializeComponent();
+        BindingContext = viewModel;
+    }
 }

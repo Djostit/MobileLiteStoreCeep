@@ -2,10 +2,13 @@
 
 public partial class AppShell : Shell
 {
-	public AppShell()
-	{
-		InitializeComponent();
-        Routing.RegisterRoute(nameof(LibraryDetailPage), typeof(LibraryDetailPage));
-        Routing.RegisterRoute(nameof(StoreDetailPage), typeof(StoreDetailPage));
+    public AppShell()
+    {
+        InitializeComponent();
+
+        BindingContext = new AppShellVieModel();
+
+        Routing.RegisterRoute(nameof(StorePage), typeof(StorePage));
+        Routing.RegisterRoute(nameof(SingUpPage), typeof(SingUpPage));
     }
 }
