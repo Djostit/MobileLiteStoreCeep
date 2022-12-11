@@ -51,17 +51,7 @@
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-android'">
-	  <PackageReference Include="DevExpress.Maui.Editors">
-	    <Version>22.1.6</Version>
-	  </PackageReference>
-	</ItemGroup>
-
-	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
-	  <PackageReference Include="DevExpress.Maui.Editors">
-	    <Version>22.1.6</Version>
-	  </PackageReference>
-	</ItemGroup>
+	
 
 	<PropertyGroup Label="MauiAppAccelerator">
 		<wizardVersion>v1.1</wizardVersion>

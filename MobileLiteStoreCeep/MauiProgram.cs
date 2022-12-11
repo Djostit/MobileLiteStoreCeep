@@ -1,4 +1,6 @@
-﻿namespace MobileLiteStoreCeep;
+﻿using CommunityToolkit.Maui;
+
+namespace MobileLiteStoreCeep;
 
 public static class MauiProgram
 {
@@ -10,7 +12,7 @@ public static class MauiProgram
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("Jost.ttf", "Jost");
-			});
+			}).UseMauiCommunityToolkit();
 
         builder.Services.AddSingleton<MainViewModel>();
 

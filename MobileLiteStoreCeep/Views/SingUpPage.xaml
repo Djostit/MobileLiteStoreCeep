@@ -7,7 +7,9 @@
              Shell.NavBarIsVisible="False"
              BackgroundColor="#121212"
              
-             xmlns:m="clr-namespace:MobileLiteStoreCeep.Models">
+             Shell.TabBarIsVisible="False"
+             
+             xmlns:m="clr-namespace:MobileLiteStoreCeep.Models">    
     <ScrollView>
         <Grid Padding="16"
               VerticalOptions="Center">
