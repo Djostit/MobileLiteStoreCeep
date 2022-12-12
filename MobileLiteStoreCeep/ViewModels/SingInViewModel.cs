@@ -33,11 +33,12 @@ public partial class SingInViewModel : BaseViewModel
         if (await _userService.AuthorizeUserAsync(Username, Password) is true)
         {
             ErrorMessageButton = string.Empty;
-            AppShell.Current.FlyoutHeader = new FloyoutHeaderControl();
+            Shell.Current.FlyoutHeader = new FloyoutHeaderControl();
             await Shell.Current.GoToAsync($"//{nameof(StorePage)}");
         }
         else
             ErrorMessageButton = "Неверное имя пользователя или пароль";
+
     }
     private bool CanSignIn()
     {

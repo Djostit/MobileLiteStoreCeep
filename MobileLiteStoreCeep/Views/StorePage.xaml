@@ -5,7 +5,7 @@
              xmlns:m="clr-namespace:MobileLiteStoreCeep.Models"
              x:Class="MobileLiteStoreCeep.Views.StorePage"
              x:DataType="vm:StoreViewModel">
-    <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshingCommand}">
+    <!--<RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshingCommand}">
         <CollectionView ItemsSource="{Binding Items}" RemainingItemsThreshold="10" RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="m:SampleItem">
@@ -15,6 +15,68 @@
                         </Frame.GestureRecognizers>
                         <Label Text="{Binding Title}" FontSize="Large" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
                     </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>-->
+
+    <RefreshView Margin="0,16"
+                 IsRefreshing="{Binding IsRefreshing}"
+                 Command="{Binding LoadGameCommand}">
+        <CollectionView ItemsSource="{Binding Games}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
+                                   ItemSpacing="20"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="m:Game">
+                    <Border MinimumHeightRequest="315"
+                            Stroke="#efefef">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{Binding Image}"
+                                   Aspect="AspectFill"/>
+
+                            <Grid Grid.Column="1"
+                                  Padding="16">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+
+                                <!--Name-->
+
+                                <Label Text="{Binding Title}"
+                                       TextColor="Red"
+                                       FontSize="24"
+                                       FontAttributes="Bold"/>
+                                <!--Description-->
+
+                                <Label Text="{Binding Description}"
+                                       Grid.Row="1"
+                                       FontSize="24"
+                                       Padding="0,8,0,0"
+                                       TextColor="#555"/>
+
+                                <!--Price-->
+
+                                <Label Text="{Binding Price}"
+                                       Grid.Row="2"
+                                       FontSize="24"
+                                       Padding="0,8,0,0"
+                                       TextColor="#555"/>
+
+                            </Grid>
+                        </Grid>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

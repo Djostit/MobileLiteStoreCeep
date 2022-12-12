@@ -2,13 +2,35 @@
 
 public partial class StoreViewModel : BaseViewModel
 {
-   // readonly SampleDataService dataService;
+    // readonly SampleDataService dataService;
+    private readonly GameService _gameService;
 
     [ObservableProperty]
     bool isRefreshing;
 
     [ObservableProperty]
-    ObservableCollection<SampleItem> items;
+    List<Game> games;
+    public StoreViewModel(GameService gameService)
+    {
+        _gameService = gameService;
+        LoadGame();
+    }
+
+    [RelayCommand]
+    public async Task LoadGame()
+    {
+        try
+        {
+            await Task.Delay(2000);
+            Games = await _gameService.GetListGame();
+            Debug.WriteLine(Games.Count);
+        }
+        finally
+        {
+            IsRefreshing = false;
+        }
+        
+    }
 
     //public StoreViewModel(SampleDataService service)
     //{

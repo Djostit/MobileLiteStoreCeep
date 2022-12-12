@@ -30,35 +30,35 @@
 
         <ShellContent
         Shell.NavBarIsVisible="true"
-        Title="Activation"
-        Icon="iconblank.png"
-        ContentTemplate="{DataTemplate views:ActivationPage}"
-        Route="ActivationPage" />
-        
-        <ShellContent
-        Shell.NavBarIsVisible="true"
-        Title="ReplenishmentBalance"
-        Icon="iconblank.png"
-        ContentTemplate="{DataTemplate views:ReplenishmentBalancePage}"
-        Route="ReplenishmentBalancePage" />
-        
-        <ShellContent
-        Shell.NavBarIsVisible="true"
-        Title="Store"
+        Title="МАГАЗИН"
         Icon="iconlistdetail.png"
         ContentTemplate="{DataTemplate views:StorePage}"
         Route="StorePage" />
-        
+
         <ShellContent
         Shell.NavBarIsVisible="true"
-        Title="Library"
+        Title="БИБЛИОТЕКА"
         Icon="iconlistdetail.png"
         ContentTemplate="{DataTemplate views:LibraryPage}"
         Route="LibraryPage" />
-        
+
         <ShellContent
         Shell.NavBarIsVisible="true"
-        Title="Setting"
+        Title="АКТИВАЦИЯ"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:ActivationPage}"
+        Route="ActivationPage" />
+
+        <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="ПОПОЛНЕНИЯ БАЛАНСА"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:ReplenishmentBalancePage}"
+        Route="ReplenishmentBalancePage" />
+
+        <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="НАСТРОЙКИ"
         Icon="iconblank.png"
         ContentTemplate="{DataTemplate views:SettingPage}"
         Route="SettingPage" />

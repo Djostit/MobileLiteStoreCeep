@@ -44,7 +44,7 @@ public static class MauiProgram
         #region Service
 
         builder.Services.AddTransient<UserService>();
-
+        builder.Services.AddTransient<GameService>();
         #endregion
 
         return builder.Build();
