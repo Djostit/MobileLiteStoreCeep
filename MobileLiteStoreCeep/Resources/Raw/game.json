@@ -2,137 +2,137 @@
   {
     "Id": 1,
     "Title": "Half-Life: Alyx",
-    "Image": "lGsetepOZuZ.OxuOuxpCD0QHZDs7Qi.jpg",
+    "Image": "half-lifealyx.jpg",
     "Description": "﻿Half-Life: Alyx — это возвращение Valve во вселенную Half-Life в виртуальной реальности. Это история невозможной борьбы с жестокой расой пришельцев, известной как Альянс. События происходят между Half-Life и Half-Life 2.",
     "Price": "1900 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\lGsetepOZuZ.OxuOuxpCD0QHZDs7Qi.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/half-lifealyx.jpg"
   },
   {
     "Id": 2,
     "Title": "SURV1V3",
-    "Image": "gVaj84gA1bBKJWh.eTrcU8MsTxns8y.jpg",
+    "Image": "SURV1V3.jpg",
     "Description": "Then forget what you have played so far, SURV1V3 is a unique realistic zombie survival fps game expressly designed for VR that will let you truly test your survival skills. Play the thrilling story in single mode or coop with your friends (up to 4 players) and survive the apocalypse!",
     "Price": "465 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\gVaj84gA1bBKJWh.eTrcU8MsTxns8y.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/surv1v3.jpg"
   },
   {
     "Id": 3,
     "Title": "Time Lock VR 1",
-    "Image": "4.njf64wpYjGToOOTnXEngjwbgiUgP.jpg",
+    "Image": "timelockvr1.jpg",
     "Description": "Временные агенты могут замедлять время для объектов, совершать временные возвраты или даже переносить объекты сквозь временные линии!",
     "Price": "777 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\4.njf64wpYjGToOOTnXEngjwbgiUgP.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/timelockvr1.jpg"
   },
   {
     "Id": 4,
     "Title": "Crysis 2 Remastered",
-    "Image": "DgFgfZOjBxX4CuLeOFfo0o3kxnKjFc.jpg",
+    "Image": "crysis2remastered.jpg",
     "Description": "В Crysis 2 Remastered вы сможете вновь окунуться в мир легендарного боевика Crysis 2, оптимизированный для современных систем.",
     "Price": "649 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\DgFgfZOjBxX4CuLeOFfo0o3kxnKjFc.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/crysis2remastered.jpg"
   },
   {
     "Id": 5,
     "Title": "ELDEN RING",
-    "Image": "de68vR8BGxEcjYPe3WUcsdNHw6aKTf.jpg",
+    "Image": "eldenring.jpg",
     "Description": "Восстань, погасшая душа! Междуземье ждёт своего повелителя. Пусть благодать приведёт тебя к Кольцу Элден.",
     "Price": "3999 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\de68vR8BGxEcjYPe3WUcsdNHw6aKTf.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/eldenring.jpg"
   },
   {
     "Id": 6,
     "Title": "Valheim",
-    "Image": "XmOMhcoQB9gX4EYudtIRBTYEwuLQEa.jpg",
+    "Image": "valheim.jpg",
     "Description": "Игра в жанре выживание, в которой вам предстоит исследовать огромный фэнтезийный мир, пропитанный скандинавской мифологией и культурой викингов.",
     "Price": "435 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\XmOMhcoQB9gX4EYudtIRBTYEwuLQEa.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/valheim.jpg"
   },
   {
     "Id": 7,
     "Title": "Satisfactory",
-    "Image": "fEvFsIJkUfE1PfBeDY7UgKmH6VJh4K.jpg",
+    "Image": "satisfactory.jpg",
     "Description": "Satisfactory — это игра от первого лица в открытом мире, вы которой вам нужно строить заводы, с упором на исследования и бои.",
     "Price": "599 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\fEvFsIJkUfE1PfBeDY7UgKmH6VJh4K.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/satisfactory.jpg"
   },
   {
     "Id": 8,
     "Title": "ASTRONEER",
-    "Image": "dZMxhdo92XcKkj.OxAF0HSk3HAFA96.jpg",
+    "Image": "astroneer.jpg",
     "Description": "Исследуйте и меняйте отдаленные планеты! Действие Astroneer разворачивается в 25-м веке, во время космической золотой лихорадки.",
     "Price": "545 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\dZMxhdo92XcKkj.OxAF0HSk3HAFA96.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/astroneer.jpg"
   },
   {
     "Id": 9,
     "Title": "Conan Exiles",
-    "Image": "pe.SQKj.zv5fwzQOHny8deNXqkFUJE.jpg",
+    "Image": "ConanExiles.jpg",
     "Description": "Сетевая многопользовательская игра во вселенной «Конана-варвара» с воителями и темным колдовством.",
     "Price": "899 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\pe.SQKj.zv5fwzQOHny8deNXqkFUJE.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/ConanExiles.jpg"
   },
   {
     "Id": 10,
     "Title": "Stranded Deep",
-    "Image": "98Z9rwscEiO4.nheQcH7.T0L6UoLYq.jpg",
+    "Image": "StrandedDeep.jpg",
     "Description": "Take the role of a plane crash survivor stranded somewhere in the Pacific Ocean.",
     "Price": "449 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\98Z9rwscEiO4.nheQcH7.T0L6UoLYq.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/StrandedDeep.jpg"
   },
   {
     "Id": 11,
     "Title": "Subnautica",
-    "Image": "TohKEikHpMeJdXc.hI1mJ6XqwkK7O0.jpg",
+    "Image": "Subnautica.jpg",
     "Description": "Descend into the depths of an alien underwater world filled with wonder and peril.",
     "Price": "435 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\TohKEikHpMeJdXc.hI1mJ6XqwkK7O0.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/Subnautica.jpg"
   },
   {
     "Id": 12,
     "Title": "ICARUS",
-    "Image": "xlUckZm2RK043xdeXGd7trsdh8cEGm.jpg",
+    "Image": "ICARUS.jpg",
     "Description": "ICARUS - это сеансовая PvE-игра на выживание, в которую могут играть до восьми игроков.",
     "Price": "719 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\xlUckZm2RK043xdeXGd7trsdh8cEGm.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/ICARUS.jpg"
   },
   {
     "Id": 13,
     "Title": "Propnight",
-    "Image": "0GmXJYmX08OzEPmeqRayTENHkj1gEj.jpg",
+    "Image": "Propnight.jpg",
     "Description": "Присоединяйтесь к захватывающей вечеринке в Propnight, многопользовательской игре в прятки.",
     "Price": "719 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\0GmXJYmX08OzEPmeqRayTENHkj1gEj.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/Propnight.jpg"
   },
   {
     "Id": 14,
     "Title": "Stray",
-    "Image": "WSdQEvZt5j5mXyRe2SqPBZgkmSY11c.jpg",
+    "Image": "Stray.jpg",
     "Description": "Потерявшемуся, одинокому, оторванному от семьи бродячему коту предстоит разгадать древнюю тайну, вырваться из давно заброшенного кибергорода и найти дорогу домой.",
     "Price": "700 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\WSdQEvZt5j5mXyRe2SqPBZgkmSY11c.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/Stray.jpg"
   },
   {
     "Id": 15,
     "Title": "Hunt: Showdown",
-    "Image": "lXl4uwopt3ixo4NObIIpOrdVhZWjH8.jpg",
+    "Image": "HuntShowdown.jpg",
     "Description": "Hunt: Showdown — это захватывающий PvPvE-шутер от первого лица, в котором побеждают те, кто готов рисковать.",
     "Price": "1349 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\lXl4uwopt3ixo4NObIIpOrdVhZWjH8.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/HuntShowdown.jpg"
   },
   {
     "Id": 16,
     "Title": "Crysis 3 Remastered",
-    "Image": "/WpLFLHAxMklf89.mP9tLUGdM8C4HR.jpg",
+    "Image": "Crysis3Remastered.jpg",
     "Description": "В Crysis 3 Remastered вы сможете вновь пережить события классического боевика Crysis 3, оптимизированного для современных систем.",
     "Price": "649 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\WpLFLHAxMklf89.mP9tLUGdM8C4HR.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/Crysis3Remastered.jpg"
   },
   {
     "Id": 17,
     "Title": "Euro Truck Simulator 2",
-    "Image": "lX9M0hmWVVKDzU6.H7aOLZu3AxA1FC.jpg",
+    "Image": "EuroTruckSimulator2.jpg",
     "Description": "Станьте королем европейских дорог — водителем грузовика, который доставляет важные грузы на немалые расстояния!",
     "Price": "949 ₽",
-    "DisplayedImage": "C:\\Users\\djost\\source\\repos\\Lite Ceep Store\\Lite Ceep Store\\Assets\\graph\\lX9M0hmWVVKDzU6.H7aOLZu3AxA1FC.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/EuroTruckSimulator2.jpg"
   }
 ]

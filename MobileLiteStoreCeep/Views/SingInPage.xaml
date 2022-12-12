@@ -27,7 +27,7 @@
                    BorderColor="Transparent"
                    BackgroundColor="#383838"/>
 
-            <Image Source="logo.jpg"
+            <Image Source="logo"
                HeightRequest="140"
                HorizontalOptions="Center"
                VerticalOptions="Center"

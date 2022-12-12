@@ -69,6 +69,7 @@ public partial class SingInViewModel : BaseViewModel
     [RelayCommand]
     public async Task SignUp()
     {
-        await Shell.Current.GoToAsync($"//{nameof(SingUpPage)}");
+        //await Shell.Current.GoToAsync($"//{nameof(SingUpPage)}");
+        //Debug.WriteLine(Path.Combine(FileSystem.Current.AppDataDirectory, "euro.jpg"));
     }
 }

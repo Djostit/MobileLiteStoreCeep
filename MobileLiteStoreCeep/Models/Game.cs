@@ -9,7 +9,7 @@
         public string Price { get; set; }
         public string DisplayedImage
         {
-            get { return Path.GetFullPath($@"Assets\graph\{Image}").Replace(@"\bin\Debug\net7.0-windows\", @"\"); }
+            get { return Path.GetFullPath(Path.Combine(FileSystem.Current.AppDataDirectory, Image)); }
         }
     }
 
