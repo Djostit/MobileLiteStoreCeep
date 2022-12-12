@@ -1,4 +1,6 @@
-﻿namespace MobileLiteStoreCeep.ViewModels;
+﻿using MobileLiteStoreCeep.Controls;
+
+namespace MobileLiteStoreCeep.ViewModels;
 
 public partial class SingInViewModel : BaseViewModel
 {
@@ -31,6 +33,7 @@ public partial class SingInViewModel : BaseViewModel
         if (await _userService.AuthorizeUserAsync(Username, Password) is true)
         {
             ErrorMessageButton = string.Empty;
+            AppShell.Current.FlyoutHeader = new FloyoutHeaderControl();
             await Shell.Current.GoToAsync($"//{nameof(StorePage)}");
         }
         else

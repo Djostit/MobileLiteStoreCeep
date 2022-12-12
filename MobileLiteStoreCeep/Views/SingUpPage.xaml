@@ -193,6 +193,24 @@
                     Padding="16"
                     FontSize="24"
                     CornerRadius="8"/>
+            
+            <Label Grid.Row="13"
+                   Text="Есть учетная запись?"
+                   HorizontalOptions="Center"
+                   FontSize="16"
+                   FontFamily="Jost"
+                   TextColor="#808080"/>
+
+            <Button Grid.Row="14"
+                    BackgroundColor="Transparent"
+                    FontFamily="Jost"
+                    TextColor="White"
+                    Command="{Binding SingInCommand}"
+                    HorizontalOptions="Center"
+                    Text="Войти"
+                    Padding="16"
+                    FontSize="24"
+                    CornerRadius="8"/>
 
             <!--<Entry Grid.Row="2"
                Text="{Binding Username,

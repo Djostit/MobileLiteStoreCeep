@@ -2,7 +2,7 @@
 
 public partial class StoreViewModel : BaseViewModel
 {
-    readonly SampleDataService dataService;
+   // readonly SampleDataService dataService;
 
     [ObservableProperty]
     bool isRefreshing;
@@ -10,10 +10,10 @@ public partial class StoreViewModel : BaseViewModel
     [ObservableProperty]
     ObservableCollection<SampleItem> items;
 
-    public StoreViewModel(SampleDataService service)
-    {
-        dataService = service;
-    }
+    //public StoreViewModel(SampleDataService service)
+    //{
+    //    dataService = service;
+    //}
 
     [RelayCommand]
     private async void OnRefreshing()
@@ -33,25 +33,25 @@ public partial class StoreViewModel : BaseViewModel
     [RelayCommand]
     public async Task LoadMore()
     {
-        var items = await dataService.GetItems();
+        //var items = await dataService.GetItems();
 
-        foreach (var item in items)
-        {
-            Items.Add(item);
-        }
+        //foreach (var item in items)
+        //{
+        //    Items.Add(item);
+        //}
     }
 
     public async Task LoadDataAsync()
     {
-        Items = new ObservableCollection<SampleItem>(await dataService.GetItems());
+       //Items = new ObservableCollection<SampleItem>(await dataService.GetItems());
     }
 
     [RelayCommand]
     private async void GoToDetails(SampleItem item)
     {
-        await Shell.Current.GoToAsync(nameof(StoreDetailPage), true, new Dictionary<string, object>
-        {
-            { "Item", item }
-        });
+        //await Shell.Current.GoToAsync(nameof(StoreDetailPage), true, new Dictionary<string, object>
+        //{
+        //    { "Item", item }
+        //});
     }
 }

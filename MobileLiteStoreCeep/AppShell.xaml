@@ -5,12 +5,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:MobileLiteStoreCeep.Views"
     xmlns:local="clr-namespace:MobileLiteStoreCeep"
+    xmlns:vm="clr-namespace:MobileLiteStoreCeep.ViewModels"
+    x:DataType="vm:AppShellVieModel"
     Shell.TabBarIsVisible="False">
 
-    <Shell.FlyoutHeader>
-        <Label Text="test"/>
-    </Shell.FlyoutHeader>
-    
     <ShellContent
         Title="SingIn Page"
         FlyoutItemIsVisible="False"
@@ -83,7 +81,8 @@
 
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
-            <Button Text="Sing Out"/>
+            <Button Text="Sing Out"
+                    Command="{Binding SignOutCommand}"/>
         </StackLayout>
     </Shell.FlyoutFooter>
 </Shell>

@@ -1,6 +1,4 @@
-﻿using CommunityToolkit.Maui;
-
-namespace MobileLiteStoreCeep;
+﻿namespace MobileLiteStoreCeep;
 
 public static class MauiProgram
 {
@@ -39,6 +37,7 @@ public static class MauiProgram
         builder.Services.AddSingleton<SettingViewModel>();
         builder.Services.AddSingleton<ByuingGameViewModel>();
         builder.Services.AddSingleton<SuccessfulPayViewModel>();
+        builder.Services.AddSingleton<AppShellVieModel>();
 
         #endregion
 

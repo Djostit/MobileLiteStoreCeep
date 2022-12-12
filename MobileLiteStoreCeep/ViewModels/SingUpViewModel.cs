@@ -161,4 +161,10 @@ public partial class SingUpViewModel : BaseViewModel
         //    return false;
     }
 
+    [RelayCommand]
+    public async Task SingIn()
+    {
+        await Shell.Current.GoToAsync($"//{nameof(SingInPage)}");
+    }
+
 }
