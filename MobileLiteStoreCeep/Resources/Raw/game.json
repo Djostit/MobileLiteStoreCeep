@@ -2,10 +2,10 @@
   {
     "Id": 1,
     "Title": "Half-Life: Alyx",
-    "Image": "half-lifealyx.jpg",
+    "Image": "halflifealyx.jpg",
     "Description": "﻿Half-Life: Alyx — это возвращение Valve во вселенную Half-Life в виртуальной реальности. Это история невозможной борьбы с жестокой расой пришельцев, известной как Альянс. События происходят между Half-Life и Half-Life 2.",
     "Price": "1900 ₽",
-    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/half-lifealyx.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/halflifealyx.jpg"
   },
   {
     "Id": 2,
@@ -66,73 +66,73 @@
   {
     "Id": 9,
     "Title": "Conan Exiles",
-    "Image": "ConanExiles.jpg",
+    "Image": "conanexiles.jpg",
     "Description": "Сетевая многопользовательская игра во вселенной «Конана-варвара» с воителями и темным колдовством.",
     "Price": "899 ₽",
-    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/ConanExiles.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/conanexiles.jpg"
   },
   {
     "Id": 10,
     "Title": "Stranded Deep",
-    "Image": "StrandedDeep.jpg",
+    "Image": "strandeddeep.jpg",
     "Description": "Take the role of a plane crash survivor stranded somewhere in the Pacific Ocean.",
     "Price": "449 ₽",
-    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/StrandedDeep.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/strandeddeep.jpg"
   },
   {
     "Id": 11,
     "Title": "Subnautica",
-    "Image": "Subnautica.jpg",
+    "Image": "subnautica.jpg",
     "Description": "Descend into the depths of an alien underwater world filled with wonder and peril.",
     "Price": "435 ₽",
-    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/Subnautica.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/subnautica.jpg"
   },
   {
     "Id": 12,
     "Title": "ICARUS",
-    "Image": "ICARUS.jpg",
+    "Image": "icarus.jpg",
     "Description": "ICARUS - это сеансовая PvE-игра на выживание, в которую могут играть до восьми игроков.",
     "Price": "719 ₽",
-    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/ICARUS.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/icarus.jpg"
   },
   {
     "Id": 13,
     "Title": "Propnight",
-    "Image": "Propnight.jpg",
+    "Image": "propnight.jpg",
     "Description": "Присоединяйтесь к захватывающей вечеринке в Propnight, многопользовательской игре в прятки.",
     "Price": "719 ₽",
-    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/Propnight.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/propnight.jpg"
   },
   {
     "Id": 14,
     "Title": "Stray",
-    "Image": "Stray.jpg",
+    "Image": "stray.jpg",
     "Description": "Потерявшемуся, одинокому, оторванному от семьи бродячему коту предстоит разгадать древнюю тайну, вырваться из давно заброшенного кибергорода и найти дорогу домой.",
     "Price": "700 ₽",
-    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/Stray.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/stray.jpg"
   },
   {
     "Id": 15,
     "Title": "Hunt: Showdown",
-    "Image": "HuntShowdown.jpg",
+    "Image": "huntshowdown.jpg",
     "Description": "Hunt: Showdown — это захватывающий PvPvE-шутер от первого лица, в котором побеждают те, кто готов рисковать.",
     "Price": "1349 ₽",
-    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/HuntShowdown.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/huntshowdown.jpg"
   },
   {
     "Id": 16,
     "Title": "Crysis 3 Remastered",
-    "Image": "Crysis3Remastered.jpg",
+    "Image": "crysis3remastered.jpg",
     "Description": "В Crysis 3 Remastered вы сможете вновь пережить события классического боевика Crysis 3, оптимизированного для современных систем.",
     "Price": "649 ₽",
-    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/Crysis3Remastered.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/crysis3remastered.jpg"
   },
   {
     "Id": 17,
     "Title": "Euro Truck Simulator 2",
-    "Image": "EuroTruckSimulator2.jpg",
+    "Image": "eurotrucksimulator2.jpg",
     "Description": "Станьте королем европейских дорог — водителем грузовика, который доставляет важные грузы на немалые расстояния!",
     "Price": "949 ₽",
-    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/EuroTruckSimulator2.jpg"
+    "DisplayedImage": "/data/user/0/com.companyname.LiteStoreCeep/files/Assests/graph/eurotrucksimulator2.jpg"
   }
 ]

@@ -45,89 +45,46 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Assests\graph\0GmXJYmX08OzEPmeqRayTENHkj1gEj.jpg" />
-	  <None Remove="Assests\graph\4.njf64wpYjGToOOTnXEngjwbgiUgP.jpg" />
-	  <None Remove="Assests\graph\98Z9rwscEiO4.nheQcH7.T0L6UoLYq.jpg" />
-	  <None Remove="Assests\graph\ASTRONEER.jpg" />
-	  <None Remove="Assests\graph\AWbHE6aev0xvC9aeVAllAedg3g5ykf.jpg" />
-	  <None Remove="Assests\graph\ConanExiles.jpg" />
-	  <None Remove="Assests\graph\Crysis2Remastered.jpg" />
-	  <None Remove="Assests\graph\Crysis3Remastered.jpg" />
-	  <None Remove="Assests\graph\de68vR8BGxEcjYPe3WUcsdNHw6aKTf.jpg" />
-	  <None Remove="Assests\graph\DgFgfZOjBxX4CuLeOFfo0o3kxnKjFc.jpg" />
-	  <None Remove="Assests\graph\dZMxhdo92XcKkj.OxAF0HSk3HAFA96.jpg" />
-	  <None Remove="Assests\graph\ELDENRING.jpg" />
-	  <None Remove="Assests\graph\EuroTruckSimulator2.jpg" />
-	  <None Remove="Assests\graph\fEvFsIJkUfE1PfBeDY7UgKmH6VJh4K.jpg" />
-	  <None Remove="Assests\graph\gVaj84gA1bBKJWh.eTrcU8MsTxns8y.jpg" />
-	  <None Remove="Assests\graph\Half-LifeAlyx.jpg" />
-	  <None Remove="Assests\graph\HuntShowdown.jpg" />
-	  <None Remove="Assests\graph\ICARUS.jpg" />
-	  <None Remove="Assests\graph\lGsetepOZuZ.OxuOuxpCD0QHZDs7Qi.jpg" />
-	  <None Remove="Assests\graph\lX9M0hmWVVKDzU6.H7aOLZu3AxA1FC.jpg" />
-	  <None Remove="Assests\graph\lXl4uwopt3ixo4NObIIpOrdVhZWjH8.jpg" />
-	  <None Remove="Assests\graph\pe.SQKj.zv5fwzQOHny8deNXqkFUJE.jpg" />
-	  <None Remove="Assests\graph\Propnight.jpg" />
-	  <None Remove="Assests\graph\Satisfactory.jpg" />
-	  <None Remove="Assests\graph\StrandedDeep.jpg" />
-	  <None Remove="Assests\graph\Stray.jpg" />
-	  <None Remove="Assests\graph\Subnautica.jpg" />
-	  <None Remove="Assests\graph\SURV1V3.jpg" />
-	  <None Remove="Assests\graph\TimeLockVR1.jpg" />
-	  <None Remove="Assests\graph\TohKEikHpMeJdXc.hI1mJ6XqwkK7O0.jpg" />
-	  <None Remove="Assests\graph\V9d8JqVE83U9mJ7u2zFCxrQ2SJOXMN.jpg" />
-	  <None Remove="Assests\graph\Valheim.jpg" />
-	  <None Remove="Assests\graph\WpLFLHAxMklf89.mP9tLUGdM8C4HR.jpg" />
-	  <None Remove="Assests\graph\WSdQEvZt5j5mXyRe2SqPBZgkmSY11c.jpg" />
-	  <None Remove="Assests\graph\xlUckZm2RK043xdeXGd7trsdh8cEGm.jpg" />
-	  <None Remove="Assests\graph\XmOMhcoQB9gX4EYudtIRBTYEwuLQEa.jpg" />
+	  <None Remove="Assests\graph\astroneer.jpg" />
+	  <None Remove="Assests\graph\conanexiles.jpg" />
+	  <None Remove="Assests\graph\crysis2remastered.jpg" />
+	  <None Remove="Assests\graph\crysis3remastered.jpg" />
+	  <None Remove="Assests\graph\defaultGamepad.jpg" />
+	  <None Remove="Assests\graph\eldenring.jpg" />
+	  <None Remove="Assests\graph\eurotrucksimulator2.jpg" />
+	  <None Remove="Assests\graph\halflifealyx.jpg" />
+	  <None Remove="Assests\graph\huntshowdown.jpg" />
+	  <None Remove="Assests\graph\icarus.jpg" />
+	  <None Remove="Assests\graph\propnight.jpg" />
+	  <None Remove="Assests\graph\satisfactory.jpg" />
+	  <None Remove="Assests\graph\strandeddeep.jpg" />
+	  <None Remove="Assests\graph\stray.jpg" />
+	  <None Remove="Assests\graph\subnautica.jpg" />
+	  <None Remove="Assests\graph\surv1v3.jpg" />
+	  <None Remove="Assests\graph\timelockvr1.jpg" />
+	  <None Remove="Assests\graph\valheim.jpg" />
 	  <None Remove="Resources\Images\euro.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiImage Include="Assests\graph\4.njf64wpYjGToOOTnXEngjwbgiUgP.jpg" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiImage Include="Assests\graph\0GmXJYmX08OzEPmeqRayTENHkj1gEj.jpg" />
-	  <MauiImage Include="Assests\graph\98Z9rwscEiO4.nheQcH7.T0L6UoLYq.jpg" />
-	  <MauiImage Include="Assests\graph\AWbHE6aev0xvC9aeVAllAedg3g5ykf.jpg" />
-	  <MauiImage Include="Assests\graph\de68vR8BGxEcjYPe3WUcsdNHw6aKTf.jpg" />
-	  <MauiImage Include="Assests\graph\DgFgfZOjBxX4CuLeOFfo0o3kxnKjFc.jpg" />
-	  <MauiImage Include="Assests\graph\dZMxhdo92XcKkj.OxAF0HSk3HAFA96.jpg" />
-	  <MauiImage Include="Assests\graph\fEvFsIJkUfE1PfBeDY7UgKmH6VJh4K.jpg" />
-	  <MauiImage Include="Assests\graph\gVaj84gA1bBKJWh.eTrcU8MsTxns8y.jpg" />
-	  <MauiImage Include="Assests\graph\lGsetepOZuZ.OxuOuxpCD0QHZDs7Qi.jpg" />
-	  <MauiImage Include="Assests\graph\lX9M0hmWVVKDzU6.H7aOLZu3AxA1FC.jpg" />
-	  <MauiImage Include="Assests\graph\lXl4uwopt3ixo4NObIIpOrdVhZWjH8.jpg" />
-	  <MauiImage Include="Assests\graph\pe.SQKj.zv5fwzQOHny8deNXqkFUJE.jpg" />
-	  <MauiImage Include="Assests\graph\TohKEikHpMeJdXc.hI1mJ6XqwkK7O0.jpg" />
-	  <MauiImage Include="Assests\graph\V9d8JqVE83U9mJ7u2zFCxrQ2SJOXMN.jpg" />
-	  <MauiImage Include="Assests\graph\WpLFLHAxMklf89.mP9tLUGdM8C4HR.jpg" />
-	  <MauiImage Include="Assests\graph\WSdQEvZt5j5mXyRe2SqPBZgkmSY11c.jpg" />
-	  <MauiImage Include="Assests\graph\xlUckZm2RK043xdeXGd7trsdh8cEGm.jpg" />
-	  <MauiImage Include="Assests\graph\ASTRONEER.jpg" />
-	  <MauiImage Include="Assests\graph\ConanExiles.jpg" />
-	  <MauiImage Include="Assests\graph\Crysis2Remastered.jpg" />
-	  <MauiImage Include="Assests\graph\Crysis3Remastered.jpg" />
-	  <MauiImage Include="Assests\graph\ELDENRING.jpg" />
-	  <MauiImage Include="Assests\graph\EuroTruckSimulator2.jpg" />
-	  <MauiImage Include="Assests\graph\Half-LifeAlyx.jpg" />
-	  <MauiImage Include="Assests\graph\HuntShowdown.jpg" />
-	  <MauiImage Include="Assests\graph\ICARUS.jpg" />
-	  <MauiImage Include="Assests\graph\Propnight.jpg" />
-	  <MauiImage Include="Assests\graph\Satisfactory.jpg" />
-	  <MauiImage Include="Assests\graph\StrandedDeep.jpg" />
-	  <MauiImage Include="Assests\graph\Stray.jpg" />
-	  <MauiImage Include="Assests\graph\Subnautica.jpg" />
-	  <MauiImage Include="Assests\graph\SURV1V3.jpg" />
-	  <MauiImage Include="Assests\graph\TimeLockVR1.jpg" />
-	  <MauiImage Include="Assests\graph\Valheim.jpg" />
-	  <MauiImage Include="Assests\graph\XmOMhcoQB9gX4EYudtIRBTYEwuLQEa.jpg" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiImage Include="Assests\graph\euro.jpg" />
+	  <MauiImage Include="Assests\graph\astroneer.jpg" />
+	  <MauiImage Include="Assests\graph\conanexiles.jpg" />
+	  <MauiImage Include="Assests\graph\crysis2remastered.jpg" />
+	  <MauiImage Include="Assests\graph\crysis3remastered.jpg" />
+	  <MauiImage Include="Assests\graph\defaultgamepad.jpg" />
+	  <MauiImage Include="Assests\graph\eldenring.jpg" />
+	  <MauiImage Include="Assests\graph\eurotrucksimulator2.jpg" />
+	  <MauiImage Include="Assests\graph\halflifealyx.jpg" />
+	  <MauiImage Include="Assests\graph\huntshowdown.jpg" />
+	  <MauiImage Include="Assests\graph\icarus.jpg" />
+	  <MauiImage Include="Assests\graph\propnight.jpg" />
+	  <MauiImage Include="Assests\graph\satisfactory.jpg" />
+	  <MauiImage Include="Assests\graph\strandeddeep.jpg" />
+	  <MauiImage Include="Assests\graph\stray.jpg" />
+	  <MauiImage Include="Assests\graph\subnautica.jpg" />
+	  <MauiImage Include="Assests\graph\surv1v3.jpg" />
+	  <MauiImage Include="Assests\graph\timelockvr1.jpg" />
+	  <MauiImage Include="Assests\graph\valheim.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
