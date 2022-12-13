@@ -19,6 +19,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             
             <Frame Grid.RowSpan="10"
@@ -93,7 +94,7 @@
                FontFamily="Jost"
                TextColor="#de3341"/>
 
-            <Button Grid.Row="7"
+            <Button Grid.Row="8"
                 BackgroundColor="Transparent"
                 FontFamily="Jost"
                 TextColor="White"

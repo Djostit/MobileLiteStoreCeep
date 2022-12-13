@@ -10,5 +10,6 @@ public partial class AppShell : Shell
 
         Routing.RegisterRoute(nameof(StorePage), typeof(StorePage));
         Routing.RegisterRoute(nameof(SingUpPage), typeof(SingUpPage));
+        Routing.RegisterRoute(nameof(ByuingGamePage), typeof(ByuingGamePage));
     }
 }

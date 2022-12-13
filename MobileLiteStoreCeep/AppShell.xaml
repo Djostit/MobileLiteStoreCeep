@@ -25,6 +25,23 @@
         ContentTemplate="{DataTemplate views:SingUpPage}"
         Route="SingUpPage" />
 
+    <FlyoutItem Route="ByuingGamePage">
+        <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="ByuingGame"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:ByuingGamePage}"
+        Route="ByuingGamePage" />
+
+        <ShellContent
+        Shell.NavBarIsVisible="true"
+        Title="SuccessfulPay"
+        Icon="iconblank.png"
+        ContentTemplate="{DataTemplate views:SuccessfulPayPage}"
+        Route="SuccessfulPayPage" />
+    </FlyoutItem>
+    
+
     <FlyoutItem Route="StorePage"
                 FlyoutDisplayOptions="AsMultipleItems">
 
@@ -62,21 +79,7 @@
         Icon="iconblank.png"
         ContentTemplate="{DataTemplate views:SettingPage}"
         Route="SettingPage" />
-        
-        <ShellContent
-        Shell.NavBarIsVisible="true"
-        Title="ByuingGame"
-        Icon="iconblank.png"
-        ContentTemplate="{DataTemplate views:ByuingGamePage}"
-        Route="ByuingGamePage" />
-        
-        <ShellContent
-        Shell.NavBarIsVisible="true"
-        Title="SuccessfulPay"
-        Icon="iconblank.png"
-        ContentTemplate="{DataTemplate views:SuccessfulPayPage}"
-        Route="SuccessfulPayPage" />
-        
+
     </FlyoutItem>
 
     <Shell.FlyoutFooter>

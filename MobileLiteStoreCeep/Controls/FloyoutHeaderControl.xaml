@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileLiteStoreCeep.Controls.FloyoutHeaderControl">
+             x:Class="MobileLiteStoreCeep.Controls.FloyoutHeaderControl"
+             Padding="16"
+             Spacing="5">
     <Label x:Name="labelUsername"
            FontAttributes="Bold"
            FontFamily="Jost"

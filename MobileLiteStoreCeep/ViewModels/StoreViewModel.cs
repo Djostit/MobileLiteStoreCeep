@@ -13,13 +13,12 @@ public partial class StoreViewModel : BaseViewModel
     [ObservableProperty]
     private Game selectedGame;
 
-    partial void OnSelectedGameChanged(Game value)
+    async partial void OnSelectedGameChanged(Game value)
     {
-        //if (Global.CurrentUser.Balance < int.Parse(value.Price.Split(" ")[0]))
-        //{
-        //    Debug.WriteLine("пошел нахуй");
-        //}
-        Debug.WriteLine(Global.CurrentUser.Balance + " " + int.Parse(value.Price.Split(" ")[0]));
+        if (Global.CurrentUser.Balance > int.Parse(value.Price.Split(" ")[0]))
+        {
+            await Shell.Current.GoToAsync($"//{nameof(ByuingGamePage)}");
+        }
     }
 
     public StoreViewModel(GameService gameService)
@@ -33,7 +32,6 @@ public partial class StoreViewModel : BaseViewModel
     {
         try
         {
-            await Task.Delay(2000);
             Games = await _gameService.GetListGame();
         }
         finally

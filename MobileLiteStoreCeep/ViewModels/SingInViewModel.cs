@@ -38,7 +38,6 @@ public partial class SingInViewModel : BaseViewModel
         }
         else
             ErrorMessageButton = "Неверное имя пользователя или пароль";
-
     }
     private bool CanSignIn()
     {
@@ -69,7 +68,6 @@ public partial class SingInViewModel : BaseViewModel
     [RelayCommand]
     public async Task SignUp()
     {
-        //await Shell.Current.GoToAsync($"//{nameof(SingUpPage)}");
-        //Debug.WriteLine(Path.Combine(FileSystem.Current.AppDataDirectory, "euro.jpg"));
+        await Shell.Current.GoToAsync($"//{nameof(SingUpPage)}");
     }
 }
