@@ -5,7 +5,7 @@
              xmlns:m="clr-namespace:MobileLiteStoreCeep.Models"
              x:Class="MobileLiteStoreCeep.Views.LibraryPage"
              x:DataType="vm:LibraryViewModel">
-    <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshingCommand}">
+    <!--<RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshingCommand}">
         <CollectionView ItemsSource="{Binding Items}" RemainingItemsThreshold="10" RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="m:SampleItem">
@@ -15,6 +15,54 @@
                         </Frame.GestureRecognizers>
                         <Label Text="{Binding Title}" FontSize="Large" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
                     </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>-->
+    <RefreshView Margin="0,16"
+                 IsRefreshing="{Binding IsRefreshing}"
+                 Command="{Binding LoadGameCommand}">
+        <CollectionView ItemsSource="{Binding Games}"
+                        SelectionMode="Single">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
+                                   ItemSpacing="20"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="m:Game">
+                    <Grid Padding="6">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal"/>
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" 
+                                                Value="Transparent"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <BoxView Grid.RowSpan="2"
+                                 CornerRadius="20"/>
+
+                        <Image Grid.Row="0"
+                                   HeightRequest="136"
+                                   Aspect="Fill"
+                                   Source="{Binding DisplayedImage}"/>
+
+                        <Label Text="{Binding Title}"
+                                   Grid.Row="1"
+                                   TextColor="White"
+                                   FontSize="24"
+                                   FontAttributes="Bold"
+                                   Margin="10,5,0,0"/>
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

@@ -23,7 +23,9 @@
     <RefreshView Margin="0,16"
                  IsRefreshing="{Binding IsRefreshing}"
                  Command="{Binding LoadGameCommand}">
-        <CollectionView ItemsSource="{Binding Games}">
+        <CollectionView ItemsSource="{Binding Games}"
+                        SelectedItem="{Binding SelectedGame, Mode=TwoWay}"
+                        SelectionMode="Single">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical"
                                    ItemSpacing="20"/>
@@ -31,52 +33,38 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="m:Game">
-                    <Border MinimumHeightRequest="315"
-                            Stroke="#efefef">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="2*"/>
-                            </Grid.ColumnDefinitions>
+                    <Grid Padding="6">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal"/>
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" 
+                                                Value="Transparent"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
 
-                            <Image Source="{Binding DisplayedImage}"
-                                   Aspect="AspectFill"/>
+                        <BoxView Grid.RowSpan="2"
+                                 CornerRadius="20"/>
 
-                            <Grid Grid.Column="1"
-                                  Padding="16">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
+                        <Image Grid.Row="0"
+                                   HeightRequest="136"
+                                   Aspect="Fill"
+                                   Source="{Binding DisplayedImage}"/>
 
-                                <!--Name-->
-
-                                <Label Text="{Binding Title}"
-                                       TextColor="Red"
-                                       FontSize="24"
-                                       FontAttributes="Bold"/>
-                                <!--Description-->
-
-                                <Label Text="{Binding Description}"
-                                       Grid.Row="1"
-                                       FontSize="24"
-                                       Padding="0,8,0,0"
-                                       TextColor="#555"/>
-
-                                <!--Price-->
-
-                                <Label Text="{Binding Price}"
-                                       Grid.Row="2"
-                                       FontSize="24"
-                                       Padding="0,8,0,0"
-                                       TextColor="#555"/>
-
-                            </Grid>
-                        </Grid>
-                    </Border>
+                        <Label Text="{Binding Price}"
+                                   Grid.Row="1"
+                                   TextColor="White"
+                                   FontSize="24"
+                                   FontAttributes="Bold"
+                                   Margin="10,5,0,0"/>
+                    </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

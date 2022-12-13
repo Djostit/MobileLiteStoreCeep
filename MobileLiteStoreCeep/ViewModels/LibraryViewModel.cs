@@ -2,43 +2,31 @@
 
 public partial class LibraryViewModel : BaseViewModel
 {
-    [ObservableProperty]
-    bool isRefreshing;
+    private readonly GameService _gameService;
 
     [ObservableProperty]
-    ObservableCollection<SampleItem> items;
+    private bool isRefreshing;
 
-    public LibraryViewModel()
+    [ObservableProperty]
+    private List<Game> games;
+
+    public LibraryViewModel(GameService gameService)
     {
-
+        _gameService = gameService;
+        LoadGame();
     }
 
     [RelayCommand]
-    private async void OnRefreshing()
+    public async Task LoadGame()
     {
-        IsRefreshing = true;
-
         try
         {
-            await LoadDataAsync();
+            await Task.Delay(2000);
+            Games = _gameService.GetLibrary(Global.CurrentUser.Games);
         }
         finally
         {
             IsRefreshing = false;
         }
-    }
-
-    [RelayCommand]
-    public async Task LoadMore()
-    {
-    }
-
-    public async Task LoadDataAsync()
-    {
-    }
-
-    [RelayCommand]
-    private async void GoToDetails(SampleItem item)
-    {
     }
 }
