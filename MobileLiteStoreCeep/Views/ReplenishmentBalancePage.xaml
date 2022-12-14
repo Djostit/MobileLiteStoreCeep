@@ -4,5 +4,57 @@
              xmlns:vm="clr-namespace:MobileLiteStoreCeep.ViewModels"
              x:Class="MobileLiteStoreCeep.Views.ReplenishmentBalancePage"
              x:DataType="vm:ReplenishmentBalanceViewModel">
+    <Grid VerticalOptions="Center"
+          Padding="16"
+          RowSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Frame Grid.RowSpan="10"
+               CornerRadius="20"
+               Margin="-10, -15, -10, -15"
+               BorderColor="Transparent"
+               BackgroundColor="#383838"/>
+
+        <FlexLayout Wrap="Wrap"
+                    Grid.Row="0"
+                    AlignItems="Start">
+            <Switch />
+            <Label FontSize="16" 
+                   FontFamily="Jost"
+                   Text="Я прочитал(а) и знаю что покупаю, согласен(на) с условием использования."/>
+        </FlexLayout>
+
+        <Label Text="Способ оплаты: "
+               Grid.Row="1"
+               HorizontalOptions="Start"
+               FontSize="22"
+               FontFamily="Jost"/>
+
+        <CollectionView Grid.Row="2">
+            
+        </CollectionView>
+
+        <Picker Grid.Row="2"
+                Title="Сумма пополнения"
+                FontFamily="Jost"
+                FontSize="16"
+                ItemsSource="{Binding ArrayAmmount}"
+                SelectedItem="{Binding SelectedAmmount}">
+            
+        </Picker>
+
+
+        <Button Text="DA"
+                Grid.Row="4"
+                Command="{Binding AddMoneyCommand}"/>
+    </Grid>
 
 </ContentPage>

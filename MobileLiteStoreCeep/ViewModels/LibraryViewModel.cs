@@ -21,7 +21,6 @@ public partial class LibraryViewModel : BaseViewModel
     {
         try
         {
-            await Task.Delay(2000);
             Games = _gameService.GetLibrary(Global.CurrentUser.Games);
         }
         finally
