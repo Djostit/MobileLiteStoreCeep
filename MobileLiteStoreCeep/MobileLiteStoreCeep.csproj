@@ -63,7 +63,17 @@
 	  <None Remove="Assests\graph\surv1v3.jpg" />
 	  <None Remove="Assests\graph\timelockvr1.jpg" />
 	  <None Remove="Assests\graph\valheim.jpg" />
+	  <None Remove="Resources\Images\BITCOIN.png" />
 	  <None Remove="Resources\Images\euro.jpg" />
+	  <None Remove="Resources\Images\iconactivation.svg" />
+	  <None Remove="Resources\Images\iconbalance.svg" />
+	  <None Remove="Resources\Images\iconlibrary.svg" />
+	  <None Remove="Resources\Images\iconsetting.svg" />
+	  <None Remove="Resources\Images\iconstore.svg" />
+	  <None Remove="Resources\Images\QIWI.png" />
+	  <None Remove="Resources\Images\ROBOKASSA.png" />
+	  <None Remove="Resources\Images\VisaMastercard.png" />
+	  <None Remove="Resources\Images\WEBMONEY.png" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -4,22 +4,9 @@
              xmlns:vm="clr-namespace:MobileLiteStoreCeep.ViewModels"
              xmlns:m="clr-namespace:MobileLiteStoreCeep.Models"
              x:Class="MobileLiteStoreCeep.Views.StorePage"
-             x:DataType="vm:StoreViewModel">
-    <!--<RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding RefreshingCommand}">
-        <CollectionView ItemsSource="{Binding Items}" RemainingItemsThreshold="10" RemainingItemsThresholdReachedCommand="{Binding LoadMoreCommand}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="m:SampleItem">
-                    <Frame Margin="4" Padding="12">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:StoreViewModel}}, Path=GoToDetailsCommand}" CommandParameter="{Binding .}" />
-                        </Frame.GestureRecognizers>
-                        <Label Text="{Binding Title}" FontSize="Large" TextColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Black}}" />
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-    </RefreshView>-->
-
+             x:DataType="vm:StoreViewModel"
+             BackgroundColor="#121212">
+    
     <RefreshView Margin="0,16"
                  IsRefreshing="{Binding IsRefreshing}"
                  Command="{Binding LoadGameCommand}">
@@ -51,7 +38,9 @@
                         </Grid.RowDefinitions>
 
                         <BoxView Grid.RowSpan="2"
-                                 CornerRadius="20"/>
+                                 CornerRadius="20"
+                                 Color="#383838"
+                                 Margin="0,-20,0,0"/>
 
                         <Image Grid.Row="0"
                                    HeightRequest="136"

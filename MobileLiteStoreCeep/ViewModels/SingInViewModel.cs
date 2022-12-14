@@ -21,6 +21,13 @@ public partial class SingInViewModel : BaseViewModel
     [ObservableProperty]
     private string errorMessageButton;
 
+    [ObservableProperty]
+    private Visibility isRunning = Visibility.Visible;
+
+    [ObservableProperty]
+    private bool isBusy = true;
+    
+
     private readonly UserService _userService;
     public SingInViewModel(UserService userService)
     {
@@ -30,14 +37,27 @@ public partial class SingInViewModel : BaseViewModel
     [RelayCommand(CanExecute = nameof(CanSignIn))]
     public async Task SignIn()
     {
-        if (await _userService.AuthorizeUserAsync(Username, Password) is true)
+        try
         {
-            ErrorMessageButton = string.Empty;
-            Shell.Current.FlyoutHeader = new FloyoutHeaderControl();
-            await Shell.Current.GoToAsync($"//{nameof(StorePage)}");
+            IsRunning = Visibility.Collapsed;
+            IsBusy = false;
+            if (await _userService.AuthorizeUserAsync(Username, Password) is true)
+            {
+                ErrorMessageButton = string.Empty;
+                Shell.Current.FlyoutHeader = new FloyoutHeaderControl();
+                await Shell.Current.GoToAsync($"//{nameof(StorePage)}");
+            }
+            else
+            {
+                ErrorMessageButton = "Неверное имя пользователя или пароль";
+            }
         }
-        else
-            ErrorMessageButton = "Неверное имя пользователя или пароль";
+        finally
+        {
+            IsRunning = Visibility.Visible;
+            IsBusy = true;
+        }
+
     }
     private bool CanSignIn()
     {

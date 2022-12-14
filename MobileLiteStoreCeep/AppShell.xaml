@@ -10,37 +10,29 @@
     Shell.TabBarIsVisible="False">
 
     <ShellContent
-        Title="SingIn Page"
         FlyoutItemIsVisible="False"
         Shell.FlyoutBehavior="Disabled"
-        Icon="iconblank.png"
         ContentTemplate="{DataTemplate views:SingInPage}"
         Route="SingInPage" />
     
     <ShellContent
-        Title="SingIn Page"
         FlyoutItemIsVisible="False"
         Shell.FlyoutBehavior="Disabled"
-        Icon="iconblank.png"
         ContentTemplate="{DataTemplate views:SingUpPage}"
         Route="SingUpPage" />
-
-    <FlyoutItem Route="ByuingGamePage">
-        <ShellContent
+    
+    <ShellContent
         Shell.NavBarIsVisible="true"
-        Title="ByuingGame"
-        Icon="iconblank.png"
+        FlyoutItemIsVisible="False"
         ContentTemplate="{DataTemplate views:ByuingGamePage}"
         Route="ByuingGamePage" />
-
-        <ShellContent
+    
+    <ShellContent
         Shell.NavBarIsVisible="true"
-        Title="SuccessfulPay"
-        Icon="iconblank.png"
+        FlyoutItemIsVisible="False"
         ContentTemplate="{DataTemplate views:SuccessfulPayPage}"
         Route="SuccessfulPayPage" />
-    </FlyoutItem>
-    
+
 
     <FlyoutItem Route="StorePage"
                 FlyoutDisplayOptions="AsMultipleItems">
@@ -48,35 +40,35 @@
         <ShellContent
         Shell.NavBarIsVisible="true"
         Title="МАГАЗИН"
-        Icon="iconlistdetail.png"
+        Icon="iconstore.png"
         ContentTemplate="{DataTemplate views:StorePage}"
         Route="StorePage" />
 
         <ShellContent
         Shell.NavBarIsVisible="true"
         Title="БИБЛИОТЕКА"
-        Icon="iconlistdetail.png"
+        Icon="iconlibrary.png"
         ContentTemplate="{DataTemplate views:LibraryPage}"
         Route="LibraryPage" />
 
         <ShellContent
         Shell.NavBarIsVisible="true"
         Title="АКТИВАЦИЯ"
-        Icon="iconblank.png"
+        Icon="iconactivation.png"
         ContentTemplate="{DataTemplate views:ActivationPage}"
         Route="ActivationPage" />
 
         <ShellContent
         Shell.NavBarIsVisible="true"
         Title="ПОПОЛНЕНИЯ БАЛАНСА"
-        Icon="iconblank.png"
+        Icon="iconbalance.png"
         ContentTemplate="{DataTemplate views:ReplenishmentBalancePage}"
         Route="ReplenishmentBalancePage" />
 
         <ShellContent
         Shell.NavBarIsVisible="true"
         Title="НАСТРОЙКИ"
-        Icon="iconblank.png"
+        Icon="iconsetting.png"
         ContentTemplate="{DataTemplate views:SettingPage}"
         Route="SettingPage" />
 
@@ -84,7 +76,10 @@
 
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
-            <Button Text="Sing Out"
+            <Button Text="ВЫЙТИ"
+                    FontFamily="Jost"
+                    TextColor="White"
+                    FontSize="24"
                     Command="{Binding SignOutCommand}"/>
         </StackLayout>
     </Shell.FlyoutFooter>

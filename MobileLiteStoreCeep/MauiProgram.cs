@@ -1,4 +1,6 @@
-﻿namespace MobileLiteStoreCeep;
+﻿using Microsoft.Maui.LifecycleEvents;
+
+namespace MobileLiteStoreCeep;
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
@@ -9,9 +11,19 @@ public static class MauiProgram
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("Jost.ttf", "Jost");
-            }).UseMauiCommunityToolkit();
+            }).UseMauiCommunityToolkit()
+            .ConfigureLifecycleEvents(events => 
+            {
+#if ANDROID
+                events.AddAndroid(android => android
+                .OnStop(activity => SaveUser())
+                .OnPause(activity => SaveUser())
+                .OnDestroy(activity => SaveUser()));
+#endif
+                static async Task SaveUser() => await UserService.SaveCurrentUserAsync();
+            });
 
-        #region View
+#region View
 
         builder.Services.AddSingleton<SingUpPage>();
         builder.Services.AddSingleton<SingInPage>();
@@ -23,9 +35,9 @@ public static class MauiProgram
         builder.Services.AddSingleton<ByuingGamePage>();
         builder.Services.AddSingleton<SuccessfulPayPage>();
 
-        #endregion
+#endregion
 
-        #region ViewModel
+#region ViewModel
 
         builder.Services.AddSingleton<SingUpViewModel>();
         builder.Services.AddSingleton<SingInViewModel>();
@@ -38,13 +50,13 @@ public static class MauiProgram
         builder.Services.AddSingleton<SuccessfulPayViewModel>();
         builder.Services.AddSingleton<AppShellVieModel>();
 
-        #endregion
+#endregion
 
-        #region Service
+#region Service
 
         builder.Services.AddTransient<UserService>();
         builder.Services.AddTransient<GameService>();
-        #endregion
+#endregion
 
         return builder.Build();
     }

@@ -74,7 +74,7 @@ namespace MobileLiteStoreCeep.Services
 
             Global.CurrentUser = user;
 
-            return BCrypt.Net.BCrypt.Verify(password, user.Password);
+            return await Task.Run(() => BCrypt.Net.BCrypt.Verify(password, user.Password));
         }
 
         public async Task AddUserAsync(string name, string lastName, string birthday, string country, string username, string password)

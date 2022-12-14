@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MobileLiteStoreCeep.ViewModels"
              x:Class="MobileLiteStoreCeep.Views.SuccessfulPayPage"
-             x:DataType="vm:SuccessfulPayViewModel">
+             x:DataType="vm:SuccessfulPayViewModel"
+             BackgroundColor="#121212">
 
 </ContentPage>
