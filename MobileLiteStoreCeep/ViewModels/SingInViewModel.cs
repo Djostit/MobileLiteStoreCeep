@@ -1,6 +1,4 @@
-﻿using MobileLiteStoreCeep.Controls;
-
-namespace MobileLiteStoreCeep.ViewModels;
+﻿namespace MobileLiteStoreCeep.ViewModels;
 
 public partial class SingInViewModel : BaseViewModel
 {

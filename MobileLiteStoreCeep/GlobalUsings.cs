@@ -9,3 +9,5 @@ global using MobileLiteStoreCeep.Assests;
 global using System.Collections.ObjectModel;
 global using System.Diagnostics;
 global using System.Threading.Tasks;
+global using MobileLiteStoreCeep.Controls;
+global using Microsoft.Maui.LifecycleEvents;

@@ -1,12 +1,7 @@
-﻿using MobileLiteStoreCeep.Controls;
-
-namespace MobileLiteStoreCeep.ViewModels;
+﻿namespace MobileLiteStoreCeep.ViewModels;
 
 public partial class ReplenishmentBalanceViewModel : BaseViewModel
 {
-    //private string currentBalance { get; set; } = Global.CurrentUser.Balance.ToString() + "₽";
-    //public string SelectedItem { get; set; }
-    //public bool isSelected { get; set; }
     [ObservableProperty]
     private List<Payment> payments;
 
@@ -14,12 +9,15 @@ public partial class ReplenishmentBalanceViewModel : BaseViewModel
     private List<string> arrayAmmount = new (){ "50 ₽", "100 ₽", "150 ₽", "200 ₽", "500 ₽", "750 ₽", "1000 ₽", "5000 ₽" };
 
     [ObservableProperty]
-    private string selectedAmmount;
-
-    [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(AddMoneyCommand))]
     private bool isSelected;
 
     [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(AddMoneyCommand))]
+    private string selectedAmmount;
+
+    [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(AddMoneyCommand))]
     private Payment selectedItem;
 
     [ObservableProperty]
@@ -29,6 +27,7 @@ public partial class ReplenishmentBalanceViewModel : BaseViewModel
     {
         LoadPayments();
     }
+
     #region LoadItems
     private void LoadPayments()
     {
@@ -77,49 +76,15 @@ public partial class ReplenishmentBalanceViewModel : BaseViewModel
     }
     private bool CanAddMoney()
     {
-        if (!IsSelected)
-        {
-            ErrorMessage = "Не принято условие использования";
-        }
-        else if (string.IsNullOrWhiteSpace(SelectedItem.Name))
-        {
+        if (string.IsNullOrEmpty(SelectedAmmount))
+            ErrorMessage = "Не выбрана сумма пополенения";
+        else if (string.IsNullOrEmpty(SelectedItem.Name))
             ErrorMessage = "Не выбран способ пополнения";
-        }
-        else if (string.IsNullOrWhiteSpace(SelectedAmmount))
-        {
-            ErrorMessage = "Не выбрана сумма пополнения";
-        }
+        else if (!IsSelected)
+            ErrorMessage = "Не принято условие использования";
         else
-        {
             ErrorMessage = string.Empty;
-        }
-
         if (ErrorMessage.Equals(string.Empty))
             return true; return false;
     }
-
-
-    //bool () =>
-    //{
-    //    if (!isSelected)
-    //    {
-    //        ErrorMessage = "Не принято условие использования";
-    //    }
-    //    else if (string.IsNullOrWhiteSpace(SelectedItem))
-    //    {
-    //        ErrorMessage = "Не выбран способ пополнения";
-    //    }
-    //    else if (string.IsNullOrWhiteSpace(SelectedAmmount))
-    //    {
-    //        ErrorMessage = "Не выбрана сумма пополнения";
-    //    }
-    //    else
-    //    {
-    //        ErrorMessage = string.Empty;
-    //    }
-
-    //    if (ErrorMessage.Equals(string.Empty))
-    //        return true; return false;
-
-    //});
 }
