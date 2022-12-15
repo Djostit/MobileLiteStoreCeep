@@ -22,14 +22,14 @@
         Route="SingUpPage" />
     
     <ShellContent
-        Shell.NavBarIsVisible="true"
         FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
         ContentTemplate="{DataTemplate views:ByuingGamePage}"
         Route="ByuingGamePage" />
     
     <ShellContent
-        Shell.NavBarIsVisible="true"
         FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
         ContentTemplate="{DataTemplate views:SuccessfulPayPage}"
         Route="SuccessfulPayPage" />
 

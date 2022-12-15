@@ -100,5 +100,4 @@
                 Grid.Row="4"
                 Command="{Binding AddMoneyCommand}"/>
     </Grid>
-
 </ContentPage>

@@ -5,5 +5,61 @@
              x:Class="MobileLiteStoreCeep.Views.ActivationPage"
              x:DataType="vm:ActivationViewModel"
              BackgroundColor="#121212">
+    
+    <Grid VerticalOptions="Center"
+          Padding="16"
+          RowSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
 
+        <Frame Grid.RowSpan="10"
+               CornerRadius="20"
+               Margin="-10, -15, -10, -15"
+               BorderColor="Transparent"
+               BackgroundColor="#383838"/>
+
+        <FlexLayout Wrap="Wrap"
+                    Grid.Row="1"
+                    AlignItems="Start">
+            <Label Text="Активировать продукт"
+                   FontSize="32"
+                   FontFamily="Jost"
+                   TextColor="White"/>
+            <Label FontSize="16" 
+                   FontFamily="Jost"
+                   Text="Введите код продукта, указанный в чеке или другой код продукта Ceep Store."
+                   TextColor="#808080"/>
+        </FlexLayout>
+
+        <Entry Placeholder="0000-0000-0000-0000-0000"
+               Text="{Binding Key}"
+               Grid.Row="2"
+               MaxLength="29"
+               Margin="0,-5,0,0"
+               TextColor="White"
+               HorizontalOptions="Fill"
+               FontSize="22"
+               FontFamily="Jost"/>
+        <Label Text="{Binding ErrorMessage}"
+               Margin="5,-25,0,0"
+               Grid.Row="3"
+               HorizontalOptions="Start"
+               FontSize="16"
+               FontFamily="Jost"
+               TextColor="#de3341"/>
+
+        <Button Text="АКТИВИРОВАТЬ"
+                FontFamily="Jost"
+                TextColor="White"
+                FontSize="24"
+                Margin="0,-5,0,0"
+                Grid.Row="4"
+                Command="{Binding ActivateCommand}"/>
+    </Grid>
 </ContentPage>
