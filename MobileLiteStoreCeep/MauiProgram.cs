@@ -25,7 +25,7 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<SingUpPage>();
         builder.Services.AddSingleton<SingInPage>();
-        builder.Services.AddSingleton<ActivationPage>();
+        builder.Services.AddTransient<ActivationPage>();
         builder.Services.AddSingleton<ReplenishmentBalancePage>();
         builder.Services.AddSingleton<StorePage>();
         builder.Services.AddSingleton<LibraryPage>();
@@ -39,7 +39,7 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<SingUpViewModel>();
         builder.Services.AddSingleton<SingInViewModel>();
-        builder.Services.AddSingleton<ActivationViewModel>();
+        builder.Services.AddTransient<ActivationViewModel>();
         builder.Services.AddSingleton<ReplenishmentBalanceViewModel>();
         builder.Services.AddSingleton<StoreViewModel>();
         builder.Services.AddSingleton<LibraryViewModel>();
