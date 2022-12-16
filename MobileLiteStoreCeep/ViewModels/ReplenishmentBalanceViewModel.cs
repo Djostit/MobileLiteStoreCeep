@@ -23,10 +23,7 @@ public partial class ReplenishmentBalanceViewModel : BaseViewModel
     [ObservableProperty]
     private string errorMessage;
 
-    public ReplenishmentBalanceViewModel()
-    {
-        LoadPayments();
-    }
+    public ReplenishmentBalanceViewModel() => LoadPayments();
 
     #region LoadItems
     private void LoadPayments()

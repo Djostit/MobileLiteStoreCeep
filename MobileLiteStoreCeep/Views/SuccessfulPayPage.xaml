@@ -4,6 +4,75 @@
              xmlns:vm="clr-namespace:MobileLiteStoreCeep.ViewModels"
              x:Class="MobileLiteStoreCeep.Views.SuccessfulPayPage"
              x:DataType="vm:SuccessfulPayViewModel"
+             Shell.NavBarIsVisible="False"
              BackgroundColor="#121212">
+    <Grid VerticalOptions="Center"
+          Padding="16"
+          RowSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
 
+        <Frame Grid.RowSpan="10"
+               CornerRadius="20"
+               Margin="-10, -15, -10, -15"
+               BorderColor="Transparent"
+               BackgroundColor="#383838"/>
+
+        <Label Grid.Row="1"
+               TextColor="White"
+               Text="Успешно!"
+               
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               
+               FontFamily="Jost"
+               FontSize="32"/>
+
+        <BoxView Grid.Row="2"
+                 HeightRequest="2"
+                 Color="Gray"/>
+
+        <Label Grid.Row="3"
+               TextColor="White"
+               
+               Text="Ваш ключ:"
+               
+               FontFamily="Jost"
+               FontSize="22"/>
+
+        <Entry Grid.Row="4"
+               TextColor="White"
+               
+               Text="{Binding Key}"
+               IsReadOnly="True"
+               
+               FontFamily="Jost"
+               FontSize="22"/>
+
+        <Button Grid.Row="5"
+                
+                FontFamily="Jost"
+                FontSize="18"
+                Text="Активировать"
+                Command="{Binding GoToActivateCommand}"
+                
+                BackgroundColor="Transparent"
+                Padding="0"
+                HorizontalOptions="Center"/>
+
+        <Button Text="ОФОРМИТЬ ЗАКАЗ"
+                FontFamily="Jost"
+                TextColor="White"
+                FontSize="24"
+                Command="{Binding GetCheckCommand}"
+                Grid.Row="6"/>
+    </Grid>
 </ContentPage>

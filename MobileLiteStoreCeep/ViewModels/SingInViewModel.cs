@@ -20,39 +20,38 @@ public partial class SingInViewModel : BaseViewModel
     private string errorMessageButton;
 
     [ObservableProperty]
-    private Visibility isRunning = Visibility.Visible;
+    private Visibility isVisible = Visibility.Visible;
+
+    [ObservableProperty]
+    private bool isRunning = false;
 
     [ObservableProperty]
     private bool isBusy = true;
-    
 
     private readonly UserService _userService;
-    public SingInViewModel(UserService userService)
-    {
-        _userService = userService;
-    }
+    public SingInViewModel(UserService userService) => _userService = userService;
 
     [RelayCommand(CanExecute = nameof(CanSignIn))]
     public async Task SignIn()
     {
         try
         {
-            IsRunning = Visibility.Collapsed;
+            IsVisible = Visibility.Collapsed;
+            IsRunning = true;
             IsBusy = false;
+            ErrorMessageButton = string.Empty;
             if (await _userService.AuthorizeUserAsync(Username, Password) is true)
             {
-                ErrorMessageButton = string.Empty;
                 Shell.Current.FlyoutHeader = new FloyoutHeaderControl();
                 await Shell.Current.GoToAsync($"//{nameof(StorePage)}");
             }
             else
-            {
                 ErrorMessageButton = "Неверное имя пользователя или пароль";
-            }
         }
         finally
         {
-            IsRunning = Visibility.Visible;
+            IsVisible = Visibility.Visible;
+            IsRunning = false;
             IsBusy = true;
         }
 
@@ -83,9 +82,7 @@ public partial class SingInViewModel : BaseViewModel
         else
             return false;
     }
+
     [RelayCommand]
-    public async Task SignUp()
-    {
-        await Shell.Current.GoToAsync($"//{nameof(SingUpPage)}");
-    }
+    public async Task SignUp() => await Shell.Current.GoToAsync($"//{nameof(SingUpPage)}");
 }

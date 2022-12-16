@@ -17,7 +17,8 @@ public partial class StoreViewModel : BaseViewModel
     {
         if (Global.CurrentUser.Balance > int.Parse(value.Price.Split(" ")[0]))
         {
-            await Shell.Current.GoToAsync($"//{nameof(ByuingGamePage)}");
+            Global.CurrentGame = value;
+            await Shell.Current.GoToAsync(nameof(ByuingGamePage));
         }
     }
 

@@ -78,9 +78,9 @@
                FontFamily="Jost"
                TextColor="#de3341"/>
             
-            <ActivityIndicator Grid.Row="6" 
-                               IsRunning="True"
-                               IsVisible="{Binding IsRunning}"/>
+            <ActivityIndicator Grid.Row="6"
+                               IsVisible="{Binding IsVisible}"
+                               IsRunning="{Binding IsRunning}"/>
 
             <Button Grid.Row="7"
                 BackgroundColor="#121212"

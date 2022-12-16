@@ -64,7 +64,10 @@
 	  <None Remove="Assests\graph\timelockvr1.jpg" />
 	  <None Remove="Assests\graph\valheim.jpg" />
 	  <None Remove="Resources\Images\BITCOIN.png" />
+	  <None Remove="Resources\Images\close.svg" />
 	  <None Remove="Resources\Images\euro.jpg" />
+	  <None Remove="Resources\Images\gamepad.svg" />
+	  <None Remove="Resources\Images\gamepadDark.svg" />
 	  <None Remove="Resources\Images\iconactivation.svg" />
 	  <None Remove="Resources\Images\iconbalance.svg" />
 	  <None Remove="Resources\Images\iconlibrary.svg" />

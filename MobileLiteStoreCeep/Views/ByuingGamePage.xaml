@@ -5,5 +5,94 @@
              x:Class="MobileLiteStoreCeep.Views.ByuingGamePage"
              x:DataType="vm:ByuingGameViewModel"
              BackgroundColor="#121212">
+    <Grid VerticalOptions="Center"
+          Padding="16"
+          RowSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
 
+        <Frame Grid.RowSpan="10"
+               CornerRadius="20"
+               Margin="-10, -15, -10, -15"
+               BorderColor="Transparent"
+               BackgroundColor="#383838"/>
+
+        <Label Grid.Row="1"
+               TextColor="White"
+               Text="{Binding Title}"
+               
+               HorizontalOptions="Start"
+               VerticalOptions="Center"
+               
+               FontFamily="Jost"
+               FontSize="32"/>
+        
+        <BoxView Color="Gray"
+                 Grid.Row="2"
+                 HeightRequest="2"
+                 HorizontalOptions="Fill"
+                 Margin="1"/>
+
+        <Image Grid.Row="3"
+               HeightRequest="136"
+               Aspect="Fill"
+               Source="{Binding Image}"/>
+
+        <Label Grid.Row="4"
+               TextColor="#808080"
+               Text="{Binding Description}"
+               
+               HorizontalOptions="Fill"
+               VerticalOptions="Center"
+               
+               FontFamily="Jost"
+               FontSize="14" />
+
+        <BoxView Color="Gray"
+                 Grid.Row="5"
+                 HeightRequest="2"
+                 HorizontalOptions="Fill"
+                 Margin="1"/>
+        
+        <Grid Grid.Row="6"
+              ColumnDefinitions="*">
+            
+            <Label Text="Итого"
+                   TextColor="White"
+                   
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   
+                   FontFamily="Jost"
+                   FontSize="16"
+                   FontAttributes="Bold"/>
+            
+            <Label Text="{Binding Price}"
+                   Grid.Column="1"
+                   TextColor="White"
+                   
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   
+                   FontFamily="Jost"
+                   FontSize="16"
+                   FontAttributes="Bold"/>
+        </Grid>
+
+        <Button Text="ОФОРМИТЬ ЗАКАЗ"
+                FontFamily="Jost"
+                TextColor="White"
+                FontSize="24"
+                Command="{Binding BuyGameCommand}"
+                Grid.Row="7"/>
+    </Grid>
 </ContentPage>

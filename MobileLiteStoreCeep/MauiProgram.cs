@@ -30,8 +30,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<StorePage>();
         builder.Services.AddSingleton<LibraryPage>();
         builder.Services.AddSingleton<SettingPage>();
-        builder.Services.AddSingleton<ByuingGamePage>();
-        builder.Services.AddSingleton<SuccessfulPayPage>();
+        builder.Services.AddTransient<ByuingGamePage>();
+        builder.Services.AddTransient<SuccessfulPayPage>();
 
 #endregion
 
@@ -44,8 +44,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<StoreViewModel>();
         builder.Services.AddSingleton<LibraryViewModel>();
         builder.Services.AddSingleton<SettingViewModel>();
-        builder.Services.AddSingleton<ByuingGameViewModel>();
-        builder.Services.AddSingleton<SuccessfulPayViewModel>();
+        builder.Services.AddTransient<ByuingGameViewModel>();
+        builder.Services.AddTransient<SuccessfulPayViewModel>();
         builder.Services.AddSingleton<AppShellVieModel>();
 
 #endregion

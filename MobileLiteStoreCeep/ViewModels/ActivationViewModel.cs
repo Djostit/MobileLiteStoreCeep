@@ -13,6 +13,11 @@ public partial class ActivationViewModel : BaseViewModel
     public ActivationViewModel(KeyService keyService)
     {
         _keyService = keyService;
+        if (Global.Key is not null)
+        {
+            Key = Global.Key;
+            Global.Key = null;
+        }
     }
 
     [RelayCommand(CanExecute = nameof(CanActivate))]
@@ -30,8 +35,5 @@ public partial class ActivationViewModel : BaseViewModel
         else
             ErrorMessage = "Неверный ключ или игра уже активирована";
     }
-    private bool CanActivate()
-    {
-        return Key is not null && !Key.Contains(" ") && Key.Length == 29;
-    }
+    private bool CanActivate() => Key is not null && !Key.Contains(" ") && Key.Length == 29;
 }

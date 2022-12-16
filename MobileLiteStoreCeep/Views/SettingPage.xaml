@@ -5,5 +5,13 @@
              x:Class="MobileLiteStoreCeep.Views.SettingPage"
              x:DataType="vm:SettingViewModel"
              BackgroundColor="#121212">
-
+    <StackLayout Orientation="Vertical"
+                 VerticalOptions="Center">
+        <Image Source="gamepad.png"/>
+        <Label Text="В стадии разработки."
+               TextColor="White"
+               FontSize="22"
+               FontFamily="Jost"
+               HorizontalOptions="Center"/>
+    </StackLayout>
 </ContentPage>
