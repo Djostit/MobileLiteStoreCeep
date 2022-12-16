@@ -1,19 +1,15 @@
-﻿using Newtonsoft.Json;
+﻿using MobileLiteStoreCeep.Models;
+using Newtonsoft.Json;
+using System.Globalization;
 
 namespace MobileLiteStoreCeep.ViewModels;
 
 public partial class SingUpViewModel : BaseViewModel
 {
-    public static List<Country> Countrys { get; set; } = new List<Country>();
-    //[ObservableProperty]
-    //private static ObservableCollection<Country> countries = new ObservableCollection<Country>(JsonConvert.DeserializeObject<List<Country>>(GetCountries().Result));
+    private static List<string> Counrtyy { get; set; } = new();
 
-    //public ObservableCollection<Country> Country { get; set; }
-    //    = new ObservableCollection<Country>(JsonConvert.DeserializeObject<List<Country>>(File
-    //        .ReadAllText(Path.GetFullPath(@"Jsons\countries.json")
-    //        .Replace(@"\bin\Debug\net7.0-windows\", @"\"))));
     [ObservableProperty]
-    private List<Country> array = Countrys;
+    private List<string> listCountry = Counrtyy;
 
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(SingUpCommand))]
@@ -21,11 +17,11 @@ public partial class SingUpViewModel : BaseViewModel
 
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(SingUpCommand))]
-    private DateTime dateEnd = DateTime.Now.AddYears(-12);
+    private DateTime dateEnd = DateTime.Now.AddYears(-7);
 
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(SingUpCommand))]
-    private Country selectedCounrty;
+    private string selectedCounrty;
 
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(SingUpCommand))]
@@ -70,17 +66,13 @@ public partial class SingUpViewModel : BaseViewModel
     [ObservableProperty]
     private string errorMessageRepeatPassword;
 
-    public List<User> allUsernames { get; set; } = new();
+    public static List<User> allUsernames { get; set; } = new();
 
     private readonly UserService _userService;
     public SingUpViewModel(UserService userService)
     {
         _userService = userService;
-
         GetCountries();
-
-        //Task<string> post = postPostAsync("Url", data).Result.Content.ReadAsStringAsync();
-        //post.Result.ToString();
     }
     private static async Task GetCountries()
     {
@@ -89,82 +81,92 @@ public partial class SingUpViewModel : BaseViewModel
 
         var contents = await reader.ReadToEndAsync();
 
-        Countrys = JsonConvert.DeserializeObject<List<Country>>(contents);
+        List<Country> Countrys = JsonConvert.DeserializeObject<List<Country>>(contents);
 
+        allUsernames = await UserService.GetUsernames();
+        Counrtyy.Clear();
+        foreach (var item in Countrys)
+        {
+            Counrtyy.Add(item.name);
+        }
     }
 
     [RelayCommand(CanExecute = nameof(CanSingUp))]
     public async Task SingUp()
     {
-        //if (await _userService.AuthorizeUserAsync(Username, Password) is true)
-        //{
-        //    ErrorMessageButton = string.Empty;
-        //}
-        //else
-        //    ErrorMessageButton = "Неверное имя пользователя или пароль";
-        Debug.WriteLine(Countrys.Count);
+        await _userService.AddUserAsync(Name, LastName, Birthday, SelectedCounrty, Username, Password);
+        await Shell.Current.GoToAsync($"//{nameof(SingInPage)}");
     }
     private bool CanSingUp()
     {
-        return true;
-        //if (string.IsNullOrWhiteSpace(Name))
-        //    ErrorMessageName = "Обязательно";
-        //else if (Name.Contains(' '))
-        //    ErrorMessageName = "Неверный формат";
-        //else
-        //    ErrorMessageName = string.Empty;
+        if (string.IsNullOrWhiteSpace(Name))
+            ErrorMessageName = "Обязательно";
+        else if (Name.Contains(' ')
+                 || !Name.Any(char.IsLetter)
+                 || Name.Any(char.IsDigit)
+                 || Name.Any(char.IsSymbol)
+                 || Name.Any(char.IsPunctuation))
+            ErrorMessageName = "Неверный формат";
+        else
+            ErrorMessageName = string.Empty;
 
-        //if (string.IsNullOrWhiteSpace(LastName))
-        //    ErrorMessageLastName = "Обязательно";
-        //else if (LastName.Contains(' '))
-        //    ErrorMessageLastName = "Неверный формат";
-        //else
-        //    ErrorMessageLastName = string.Empty;
+        if (string.IsNullOrWhiteSpace(LastName))
+            ErrorMessageLastName = "Обязательно";
+        else if (LastName.Contains(' ')
+                 || !LastName.Any(char.IsLetter)
+                 || LastName.Any(char.IsDigit)
+                 || LastName.Any(char.IsSymbol)
+                 || LastName.Any(char.IsPunctuation))
+            ErrorMessageLastName = "Неверный формат";
+        else
+            ErrorMessageLastName = string.Empty;
 
-        //if (string.IsNullOrWhiteSpace(Username))
-        //    ErrorMessageUsername = "Обязательно";
-        //else if (Username.Length < 3)
-        //    ErrorMessageUsername = "Слишком короткий";
-        //else if (Username.Contains(' '))
-        //    ErrorMessageUsername = "Неверный формат";
-        //else if (allUsernames.SingleOrDefault(u => u.Username.ToLower().Equals(Username.ToLower())) != null)
-        //    ErrorMessageUsername = "Уже существует";
-        //else
-        //    ErrorMessageUsername = string.Empty;
+        if (string.IsNullOrWhiteSpace(Username))
+            ErrorMessageUsername = "Обязательно";
+        else if (Username.Length < 3)
+            ErrorMessageUsername = "Слишком короткий";
+        else if (Username.Contains(' ')
+                 || Username.Any(char.IsSymbol)
+                 || Username.Any(char.IsPunctuation))
+            ErrorMessageUsername = "Неверный формат";
+        else if (allUsernames.SingleOrDefault(u => u.Username.ToLower().Equals(Username.ToLower())) != null)
+            ErrorMessageUsername = "Уже существует";
+        else
+            ErrorMessageUsername = string.Empty;
 
-        //if (string.IsNullOrWhiteSpace(Password))
-        //    ErrorMessagePassword = "Обязательно";
-        //else if (Password.Length < 7)
-        //    ErrorMessagePassword = "Слишком короткий";
-        //else if (Password.Contains(' ')
-        //        || !Password.Any(char.IsDigit)
-        //        || !Password.Any(char.IsLetter))
-        //    ErrorMessagePassword = "Неверный формат";
-        //else
-        //    ErrorMessagePassword = string.Empty;
+        if (string.IsNullOrWhiteSpace(Password))
+            ErrorMessagePassword = "Обязательно";
+        else if (Password.Length < 7)
+            ErrorMessagePassword = "Слишком короткий";
+        else if (Password.Contains(' ')
+                || !Password.Any(char.IsDigit)
+                || !Password.Any(char.IsLetter))
+            ErrorMessagePassword = "Неверный формат";
+        else
+            ErrorMessagePassword = string.Empty;
 
-        //if (string.IsNullOrWhiteSpace(RepeatPassword)
-        //    || !string.IsNullOrWhiteSpace(RepeatPassword)
-        //    && !RepeatPassword.Equals(Password))
-        //    ErrorMessageRepeatPassword = "Пароли не совпадают";
-        //else
-        //    ErrorMessageRepeatPassword = string.Empty;
+        if (string.IsNullOrWhiteSpace(RepeatPassword)
+            || !string.IsNullOrWhiteSpace(RepeatPassword)
+            && !RepeatPassword.Equals(Password))
+            ErrorMessageRepeatPassword = "Пароли не совпадают";
+        else
+            ErrorMessageRepeatPassword = string.Empty;
 
-        //if (ErrorMessageName.Equals(string.Empty)
-        //    && ErrorMessageLastName.Equals(string.Empty)
-        //    && ErrorMessageBirthday.Equals(string.Empty)
-        //    && ErrorMessageUsername.Equals(string.Empty)
-        //    && ErrorMessagePassword.Equals(string.Empty)
-        //    && ErrorMessageRepeatPassword.Equals(string.Empty))
-        //    return true;
-        //else
-        //    return false;
+        if (ErrorMessageName.Equals(string.Empty)
+            && ErrorMessageLastName.Equals(string.Empty)
+            && ErrorMessageUsername.Equals(string.Empty)
+            && ErrorMessagePassword.Equals(string.Empty)
+            && ErrorMessageRepeatPassword.Equals(string.Empty))
+            return true;
+        else
+            return false;
     }
 
     [RelayCommand]
     public async Task SingIn()
     {
-        await Shell.Current.GoToAsync($"//{nameof(SingInPage)}");
+        //await Shell.Current.GoToAsync($"//{nameof(SingInPage)}");
+        Debug.WriteLine(allUsernames.Count + " " + ListCountry.Count);
     }
 
 }

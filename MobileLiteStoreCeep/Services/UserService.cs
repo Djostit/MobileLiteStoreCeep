@@ -50,7 +50,11 @@ namespace MobileLiteStoreCeep.Services
 
             await streamWriter.WriteAsync(JsonConvert.SerializeObject(Users, Formatting.Indented));
         }
-
+        public static async Task<List<User>> GetUsernames()
+        {
+            await ReadUsersAsync();
+            return Users;
+        }
         public async Task CheckAllUsers()
         {
             if (Users.Count is 0)

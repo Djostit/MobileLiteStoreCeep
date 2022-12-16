@@ -50,13 +50,14 @@
 
         <Entry Grid.Row="4"
                TextColor="White"
+               MaxLength="29"
                
                Text="{Binding Key}"
                IsReadOnly="True"
                
                FontFamily="Jost"
                FontSize="22"/>
-
+        
         <Button Grid.Row="5"
                 
                 FontFamily="Jost"
@@ -68,7 +69,7 @@
                 Padding="0"
                 HorizontalOptions="Center"/>
 
-        <Button Text="ОФОРМИТЬ ЗАКАЗ"
+        <Button Text="ВЕРНУТЬСЯ НАЗАД"
                 FontFamily="Jost"
                 TextColor="White"
                 FontSize="24"

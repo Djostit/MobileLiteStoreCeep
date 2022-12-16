@@ -84,5 +84,5 @@ public partial class SingInViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    public async Task SignUp() => await Shell.Current.GoToAsync($"//{nameof(SingUpPage)}");
+    public async Task SignUp() => await Shell.Current.GoToAsync(nameof(SingUpPage));
 }

@@ -14,16 +14,16 @@ public static class MauiProgram
             {
 #if ANDROID
                 events.AddAndroid(android => android
-                .OnStop(activity => SaveUser())
-                .OnPause(activity => SaveUser())
-                .OnDestroy(activity => SaveUser()));
+                .OnStop(async activity => await SaveUser())
+                .OnPause(async activity => await SaveUser())
+                .OnDestroy(async activity => await SaveUser()));
 #endif
                 static async Task SaveUser() => await UserService.SaveCurrentUserAsync();
             });
 
 #region View
 
-        builder.Services.AddSingleton<SingUpPage>();
+        builder.Services.AddTransient<SingUpPage>();
         builder.Services.AddSingleton<SingInPage>();
         builder.Services.AddTransient<ActivationPage>();
         builder.Services.AddSingleton<ReplenishmentBalancePage>();
@@ -37,7 +37,7 @@ public static class MauiProgram
 
 #region ViewModel
 
-        builder.Services.AddSingleton<SingUpViewModel>();
+        builder.Services.AddTransient<SingUpViewModel>();
         builder.Services.AddSingleton<SingInViewModel>();
         builder.Services.AddTransient<ActivationViewModel>();
         builder.Services.AddSingleton<ReplenishmentBalanceViewModel>();

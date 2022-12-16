@@ -108,7 +108,7 @@
                 HorizontalOptions="Center"
                 Text="Зарегистрироваться"
                 Command="{Binding SignUpCommand}"
-                Padding="16"
+                Padding="0"
                 FontSize="24"
                 CornerRadius="8"
                 Margin="0, 10, 0, 0"/>
