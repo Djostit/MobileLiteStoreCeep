@@ -50,11 +50,28 @@ namespace MobileLiteStoreCeep.Services
 
             await streamWriter.WriteAsync(JsonConvert.SerializeObject(Users, Formatting.Indented));
         }
-        public static async Task<List<User>> GetUsernames()
+        public async Task<List<User>> GetUsernames()
         {
             await ReadUsersAsync();
             return Users;
         }
+        public async Task<List<string>> GetCountries()
+        {
+            using var stream = await FileSystem.OpenAppPackageFileAsync("countries.json");
+            using var reader = new StreamReader(stream);
+
+            var contents = await reader.ReadToEndAsync();
+
+            List<Country> Countrys = JsonConvert.DeserializeObject<List<Country>>(contents);
+
+            List<string> a = new();
+            foreach (var item in Countrys)
+            {
+                a.Add(item.name);
+            }
+            return a;
+        }
+
         public async Task CheckAllUsers()
         {
             if (Users.Count is 0)

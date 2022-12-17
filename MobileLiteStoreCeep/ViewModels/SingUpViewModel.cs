@@ -9,7 +9,7 @@ public partial class SingUpViewModel : BaseViewModel
     private static List<string> Counrtyy { get; set; } = new();
 
     [ObservableProperty]
-    private List<string> listCountry = Counrtyy;
+    private List<string> listCountry;
 
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(SingUpCommand))]
@@ -47,6 +47,8 @@ public partial class SingUpViewModel : BaseViewModel
     [NotifyCanExecuteChangedFor(nameof(SingUpCommand))]
     private string repeatPassword;
 
+    [ObservableProperty]
+    private string errorMessageCounrty;
 
     [ObservableProperty]
     private string errorMessageName;
@@ -72,23 +74,13 @@ public partial class SingUpViewModel : BaseViewModel
     public SingUpViewModel(UserService userService)
     {
         _userService = userService;
-        GetCountries();
+        Load();
     }
-    private static async Task GetCountries()
+
+    public async Task Load()
     {
-        using var stream = await FileSystem.OpenAppPackageFileAsync("countries.json");
-        using var reader = new StreamReader(stream);
-
-        var contents = await reader.ReadToEndAsync();
-
-        List<Country> Countrys = JsonConvert.DeserializeObject<List<Country>>(contents);
-
-        allUsernames = await UserService.GetUsernames();
-        Counrtyy.Clear();
-        foreach (var item in Countrys)
-        {
-            Counrtyy.Add(item.name);
-        }
+        allUsernames = await _userService.GetUsernames();
+        ListCountry = await _userService.GetCountries();
     }
 
     [RelayCommand(CanExecute = nameof(CanSingUp))]
@@ -99,6 +91,11 @@ public partial class SingUpViewModel : BaseViewModel
     }
     private bool CanSingUp()
     {
+        if (string.IsNullOrEmpty(SelectedCounrty))
+            ErrorMessageCounrty = "Обязательно";
+        else
+            ErrorMessageCounrty = string.Empty;
+
         if (string.IsNullOrWhiteSpace(Name))
             ErrorMessageName = "Обязательно";
         else if (Name.Contains(' ')
@@ -156,7 +153,8 @@ public partial class SingUpViewModel : BaseViewModel
             && ErrorMessageLastName.Equals(string.Empty)
             && ErrorMessageUsername.Equals(string.Empty)
             && ErrorMessagePassword.Equals(string.Empty)
-            && ErrorMessageRepeatPassword.Equals(string.Empty))
+            && ErrorMessageRepeatPassword.Equals(string.Empty)
+            && ErrorMessageCounrty.Equals(string.Empty))
             return true;
         else
             return false;
@@ -165,8 +163,7 @@ public partial class SingUpViewModel : BaseViewModel
     [RelayCommand]
     public async Task SingIn()
     {
-        //await Shell.Current.GoToAsync($"//{nameof(SingInPage)}");
-        Debug.WriteLine(allUsernames.Count + " " + ListCountry.Count);
+        await Shell.Current.GoToAsync($"//{nameof(SingInPage)}");
     }
 
 }
